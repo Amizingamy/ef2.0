@@ -42,6 +42,17 @@ BOT_NAME = os.getenv("BOT_NAME", "Sketchbook Buddy")
 DAILY_CHANNEL_ID = int(os.getenv("DAILY_CHANNEL_ID") or 0)
 DAILY_HOUR = int(os.getenv("DAILY_HOUR") or 9)
 TIMEZONE = os.getenv("TIMEZONE", "Europe/London")
+try:
+    from zoneinfo import ZoneInfo
+    LOCAL_TZ = ZoneInfo(TIMEZONE)
+except Exception:
+    LOCAL_TZ = dt.timezone.utc
+
+
+def today_local():
+    return dt.datetime.now(LOCAL_TZ).date()
+
+
 AI_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 AI_MODEL = os.getenv("AI_MODEL", "claude-haiku-5-5")
 AI_DAILY_LIMIT = int(os.getenv("AI_DAILY_LIMIT") or 60)
@@ -114,7 +125,7 @@ def load_data():
 
 
 DATA = load_data()
-for _k in ("plans", "ai_usage", "briefs", "logs", "reminders_off"):
+for _k in ("plans", "ai_usage", "briefs", "logs", "reminders_off", "game", "pings"):
     DATA.setdefault(_k, [] if _k == "reminders_off" else {})
 
 
@@ -703,23 +714,164 @@ class DescribeView(discord.ui.View):
             await inter.followup.send(p)
 
 
-# ---- streak / progress
+# ---- Sketchbook Quest: points, streaks, levels
+def player(uid):
+    return DATA["game"].setdefault(str(uid), {"points": 0, "days": {}, "best": 0, "settled": None})
+
+
+def done_dates(uid):
+    g = DATA["game"].get(str(uid), {"days": {}})
+    s = {d for d, v in g["days"].items() if v in ("yes", "caught")}
+    s |= {e["date"] for e in DATA["logs"].get(str(uid), [])}
+    return s
+
+
 def streak(uid):
-    days = sorted({e["date"] for e in DATA["logs"].get(str(uid), [])}, reverse=True)
-    if not days:
-        return 0
-    today = dt.date.today()
-    cur = dt.date.fromisoformat(days[0])
-    if (today - cur).days > 1:
-        return 0
-    n = 1
-    for d in days[1:]:
-        nd = dt.date.fromisoformat(d)
-        if (cur - nd).days == 1:
-            n += 1; cur = nd
-        else:
-            break
+    days = done_dates(uid)
+    cur = today_local()
+    if cur.isoformat() not in days:
+        cur -= dt.timedelta(days=1)          # today not done yet: streak still alive from yesterday
+    n = 0
+    while cur.isoformat() in days:
+        n += 1; cur -= dt.timedelta(days=1)
     return n
+
+
+def level(points):
+    title, nxt = C.LEVELS[0][1], None
+    for i, (need, name) in enumerate(C.LEVELS):
+        if points >= need:
+            title = name
+            nxt = C.LEVELS[i + 1] if i + 1 < len(C.LEVELS) else None
+    return title, nxt
+
+
+def settle(uid):
+    """Turn unanswered past days (since the ping was set up) into misses. Returns list of missed dates."""
+    g = player(uid)
+    ping = DATA["pings"].get(str(uid))
+    if not ping:
+        return []
+    start = dt.date.fromisoformat(g["settled"] or ping["since"])
+    yesterday = today_local() - dt.timedelta(days=1)
+    missed, d = [], max(start, yesterday - dt.timedelta(days=6))   # never punish more than 7 days at once
+    logs = {e["date"] for e in DATA["logs"].get(str(uid), [])}
+    while d <= yesterday:
+        k = d.isoformat()
+        if k not in g["days"] and k >= ping["since"]:
+            if k in logs:
+                g["days"][k] = "yes"; g["points"] += C.POINTS_YES
+            else:
+                g["days"][k] = "miss"; g["points"] += C.POINTS_MISS; missed.append(k)
+        d += dt.timedelta(days=1)
+    g["settled"] = (yesterday + dt.timedelta(days=1)).isoformat()
+    save_data()
+    return missed
+
+
+def catchable(uid):
+    g = player(uid)
+    t = today_local()
+    return sorted((d for d, v in g["days"].items() if v in ("no", "miss")
+                   and 1 <= (t - dt.date.fromisoformat(d)).days <= C.CATCHUP_DAYS), reverse=True)
+
+
+def mark_yes(uid, day=None):
+    """Record a sketchbook day. Returns (points_gained, streak, bonus) or None if already counted."""
+    g = player(uid)
+    k = (day or today_local()).isoformat()
+    if g["days"].get(k) in ("yes", "caught"):
+        return None
+    prev = g["days"].get(k)
+    gained = C.POINTS_YES - (C.POINTS_NO if prev == "no" else 0)
+    g["days"][k] = "yes"
+    n = streak(uid)
+    bonus = C.STREAK_BONUS if n and n % 7 == 0 else 0
+    g["points"] += gained + bonus
+    g["best"] = max(g.get("best", 0), n)
+    save_data()
+    return gained + bonus, n, bonus
+
+
+def score_line(uid):
+    g = player(uid)
+    title, nxt = level(g["points"])
+    to_next = f" · {nxt[0] - g['points']} to {nxt[1]}" if nxt else ""
+    return f"🔥 **{streak(uid)}-day streak** · ⭐ **{g['points']} pts** · {title}{to_next}"
+
+
+class QuestButton(discord.ui.DynamicItem[discord.ui.Button], template=r"sq:(?P<act>yes|no|catch):(?P<uid>\d+)"):
+    def __init__(self, act, uid):
+        labels = {"yes": ("✅ Yes, I did it!", discord.ButtonStyle.success),
+                  "no": ("❌ Not today", discord.ButtonStyle.danger),
+                  "catch": ("🔁 I did extra to catch up", discord.ButtonStyle.primary)}
+        lab, style = labels[act]
+        super().__init__(discord.ui.Button(label=lab, style=style, custom_id=f"sq:{act}:{uid}"))
+        self.act, self.uid = act, int(uid)
+
+    @classmethod
+    async def from_custom_id(cls, inter, item, match):
+        return cls(match["act"], match["uid"])
+
+    async def callback(self, inter: discord.Interaction):
+        if inter.user.id != self.uid:
+            return await inter.response.send_message("This button isn't yours. 👀 Use `/ping` to set up your own!", ephemeral=True)
+        await inter.response.send_message(quest_answer(self.uid, self.act))
+
+
+def quest_answer(uid, act):
+    settle(uid)
+    g = player(uid)
+    k = today_local().isoformat()
+    if act == "yes":
+        r = mark_yes(uid)
+        if not r:
+            return f"Already counted today. ✅ Go rest, legend.\n{score_line(uid)}"
+        gained, n, bonus = r
+        extra = f"\n🎉 **{n} DAYS IN A ROW! +{bonus} bonus!**" if bonus else ""
+        return f"{random.choice(C.YES_LINES)} **+{gained - bonus} ⭐**{extra}\n{score_line(uid)}"
+    if act == "no":
+        if g["days"].get(k) in ("yes", "caught"):
+            return f"Wait, you already said yes today! Keeping that. ✅\n{score_line(uid)}"
+        if g["days"].get(k) == "no":
+            return f"Already noted. Tomorrow's a new page. 🌅\n{score_line(uid)}"
+        g["days"][k] = "no"; g["points"] += C.POINTS_NO; save_data()
+        return (f"{random.choice(C.NO_LINES)} **{C.POINTS_NO} ⭐**\n{score_line(uid)}\n"
+                f"*Win it back: do a double session in the next {C.CATCHUP_DAYS} days and tap 🔁 catch up (or use `/sketched catch up`).*")
+    # catch up
+    days = catchable(uid)
+    if not days:
+        return f"Nothing to catch up on, you're all square! 🙌\n{score_line(uid)}"
+    d = days[0]
+    lost = C.POINTS_MISS if g["days"][d] == "miss" else C.POINTS_NO
+    g["days"][d] = "caught"
+    g["points"] += -lost + C.POINTS_CATCHUP
+    g["best"] = max(g.get("best", 0), streak(uid))
+    save_data()
+    return f"{random.choice(C.CATCHUP_LINES)} **+{-lost + C.POINTS_CATCHUP} ⭐** ({d})\n{score_line(uid)}"
+
+
+def quest_view(uid):
+    v = discord.ui.View(timeout=None)
+    v.add_item(QuestButton("yes", uid)); v.add_item(QuestButton("no", uid))
+    if catchable(uid):
+        v.add_item(QuestButton("catch", uid))
+    return v
+
+
+async def send_ping(uid, ping):
+    ch = bot.get_channel(ping["channel"]) or await bot.fetch_channel(ping["channel"])
+    missed = settle(int(uid))
+    lines = [f"<@{uid}> {ping.get('message') or C.DEFAULT_PING}"]
+    if missed:
+        lines.append(f"{random.choice(C.MISS_LINES)} **{C.POINTS_MISS * len(missed)} ⭐**"
+                     + (" Tap 🔁 after a double session to win it back." if catchable(int(uid)) else ""))
+    if today_local().isoformat() in done_dates(int(uid)):
+        lines.append("…oh wait, you already did it today. 😌 Nice.")
+    lines.append(score_line(int(uid)))
+    lines.append("**Did you do sketchbook today?**")
+    await ch.send("\n".join(lines), view=quest_view(int(uid)),
+                  allowed_mentions=discord.AllowedMentions(users=True))
 
 
 def today_tasks(uid):
@@ -742,8 +894,10 @@ class Bot(discord.Client):
         self.tree = app_commands.CommandTree(self)
 
     async def setup_hook(self):
+        self.add_dynamic_items(QuestButton)
         await self.tree.sync()
         daily_post.start()
+        ping_loop.start()
 
 
 bot = Bot()
@@ -803,6 +957,8 @@ async def help_cmd(inter: discord.Interaction):
     e.add_field(name="🖼️ Artists", value="`/artist`: one artist's card\n`/artists`: list by theme or pathway", inline=False)
     e.add_field(name="📋 Organising", value="`/brief`: save your current brief\n`/plan`: split your work into days\n`/todo`: see your plan · `/done`: tick something off\n"
                 "`/log`: log what you did (build a streak!)\n`/progress`: see how far you've come", inline=False)
+    e.add_field(name="🎮 Sketchbook game", value="`/ping`: daily reminder at your time, tagged with your name\n"
+                "`/sketched`: did you do it today? (points!)\n`/score`: streak, points and level · `/leaderboard`: who's winning", inline=False)
     e.add_field(name="🤍 Support", value="`/checkin`: how are you doing?\n`/stuck`: get unstuck\n`/hype`: a little boost", inline=False)
     if AI:
         e.add_field(name="💬 Chat", value="@mention me or DM me to chat. You can send sketchbook photos too.", inline=False)
@@ -1088,11 +1244,11 @@ async def brief_cmd(inter: discord.Interaction, text: str = ""):
 @app_commands.describe(what="What did you do? e.g. 'tone strip in charcoal' or '2 artist pages'")
 async def log_cmd(inter: discord.Interaction, what: str):
     uid = str(inter.user.id)
-    DATA["logs"].setdefault(uid, []).append({"date": dt.date.today().isoformat(), "text": what[:300]})
+    DATA["logs"].setdefault(uid, []).append({"date": today_local().isoformat(), "text": what[:300]})
     save_data()
-    n = streak(inter.user.id)
-    fire = f"🔥 **{n}-day streak!**" if n > 1 else "🌱 Day 1 of your streak. Come back tomorrow!"
-    await inter.response.send_message(f"{random.choice(C.LOG_REPLIES)} *{what[:300]}*\n{fire}")
+    r = mark_yes(inter.user.id)
+    pts = f" **+{r[0]} ⭐**" if r else ""
+    await inter.response.send_message(f"{random.choice(C.LOG_REPLIES)} *{what[:300]}*{pts}\n{score_line(inter.user.id)}")
 
 
 @tree.command(name="progress", description="See everything you've done so far")
@@ -1103,7 +1259,7 @@ async def progress_cmd(inter: discord.Interaction):
     lines = ["## 🌱 Your progress"]
     if DATA["briefs"].get(uid):
         lines.append(f"📌 **Brief:** {DATA['briefs'][uid]}")
-    lines.append(f"🔥 **Streak:** {streak(inter.user.id)} day(s) · 📒 **Things logged:** {len(logs)}")
+    lines.append(score_line(inter.user.id) + f" · 📒 **Logged:** {len(logs)}")
     if p and p.get("tasks"):
         done = sum(t["done"] for t in p["tasks"])
         bar = "🟩" * round(10 * done / len(p["tasks"])) + "⬜" * (10 - round(10 * done / len(p["tasks"])))
@@ -1129,6 +1285,88 @@ async def reminders_cmd(inter: discord.Interaction, setting: app_commands.Choice
         off.remove(inter.user.id)
     save_data()
     await inter.response.send_message(f"Morning reminders are **{setting.value}**. 🙂")
+
+
+@tree.command(name="ping", description="Get a daily sketchbook ping in this channel, tagged with your name")
+@app_commands.describe(time="Time for the ping, e.g. 18:00 or 6pm", message="Your own ping message (optional)", off="Turn the ping off")
+async def ping_cmd(inter: discord.Interaction, time: str = "18:00", message: str = "", off: bool = False):
+    uid = str(inter.user.id)
+    if off:
+        DATA["pings"].pop(uid, None); save_data()
+        return await inter.response.send_message("Daily ping is off. The sketchbook will miss you. 🥲 (`/ping` to turn it back on)")
+    m = re.match(r"^\s*(\d{1,2})(?::|\.)?(\d{2})?\s*(am|pm)?\s*$", time.lower())
+    if not m:
+        return await inter.response.send_message("I didn't understand that time. Try `18:00` or `6pm`.")
+    h, mi, ap = int(m.group(1)), int(m.group(2) or 0), m.group(3)
+    if ap == "pm" and h < 12: h += 12
+    if ap == "am" and h == 12: h = 0
+    if not (0 <= h < 24 and 0 <= mi < 60):
+        return await inter.response.send_message("That time doesn't exist. 😅 Try `18:00` or `6pm`.")
+    old_p = DATA["pings"].get(uid, {})
+    DATA["pings"][uid] = {"channel": inter.channel_id, "time": f"{h:02d}:{mi:02d}", "message": message[:300] or old_p.get("message", ""),
+                          "since": old_p.get("since") or today_local().isoformat(), "last": old_p.get("last")}
+    player(uid)
+    save_data()
+    msg = DATA["pings"][uid]["message"] or C.DEFAULT_PING
+    await inter.response.send_message(
+        f"⏰ Done! Every day at **{h:02d}:{mi:02d}** ({TIMEZONE.split('/')[-1].replace('_', ' ')} time) I'll ping you here with:\n> {msg}\n\n"
+        f"**The game:** ✅ Yes = **+{C.POINTS_YES}** · ❌ Not today = **{C.POINTS_NO}** · 👻 No answer = **{C.POINTS_MISS}**\n"
+        f"🔁 Missed a day? Do a double session within {C.CATCHUP_DAYS} days and catch up to win it back (**+{C.POINTS_CATCHUP}** bonus).\n"
+        f"🔥 Every 7 days in a row = **+{C.STREAK_BONUS}** bonus. Level up from 📄 Blank Page to 👑 Master of the Page.\n"
+        f"`/score` to see your stats · `/leaderboard` to see who's winning.")
+
+
+@tree.command(name="sketched", description="Tell me if you did sketchbook today (same as the ping buttons)")
+@app_commands.choices(answer=[app_commands.Choice(name="✅ yes", value="yes"), app_commands.Choice(name="❌ not today", value="no"),
+                              app_commands.Choice(name="🔁 catch up (I did extra)", value="catch")])
+async def sketched_cmd(inter: discord.Interaction, answer: app_commands.Choice[str]):
+    await inter.response.send_message(quest_answer(inter.user.id, answer.value))
+
+
+@tree.command(name="score", description="Your sketchbook streak, points and level")
+async def score_cmd(inter: discord.Interaction):
+    uid = inter.user.id
+    settle(uid)
+    g = player(uid)
+    title, nxt = level(g["points"])
+    t = today_local()
+    week = ""
+    for i in range(6, -1, -1):
+        d = (t - dt.timedelta(days=i)).isoformat()
+        v = g["days"].get(d) or ("yes" if d in done_dates(uid) else None)
+        week += {"yes": "🟩", "caught": "🟦", "no": "🟥", "miss": "⬛"}.get(v, "⬜")
+    bar = ""
+    if nxt:
+        lo = max(level_floor(g["points"]), 0)
+        frac = max(0, min(1, (g["points"] - lo) / max(1, nxt[0] - lo)))
+        bar = "\n" + "▰" * round(frac * 10) + "▱" * (10 - round(frac * 10)) + f" {nxt[0] - g['points']} pts to {nxt[1]}"
+    catch = catchable(uid)
+    lines = [f"## {title}", f"⭐ **{g['points']} points**{bar}",
+             f"🔥 Streak: **{streak(uid)}** · 🏅 Best: **{max(g.get('best', 0), streak(uid))}**",
+             f"Last 7 days: {week}", "*🟩 did it · 🟦 caught up · 🟥 not today · ⬛ missed · ⬜ nothing yet*"]
+    if catch:
+        lines.append(f"\n🔁 You can still win back **{len(catch)}** day(s): do a double session, then `/sketched catch up`.")
+    p = DATA["pings"].get(str(uid))
+    lines.append(f"⏰ Daily ping: **{p['time']}**" if p else "⏰ No daily ping yet: `/ping` to start the game properly.")
+    await inter.response.send_message("\n".join(lines))
+
+
+def level_floor(points):
+    lo = 0
+    for need, _ in C.LEVELS:
+        if points >= need:
+            lo = need
+    return lo
+
+
+@tree.command(name="leaderboard", description="Who's winning the sketchbook game?")
+async def leaderboard_cmd(inter: discord.Interaction):
+    rows = sorted(((int(u), g["points"]) for u, g in DATA["game"].items() if g.get("days")), key=lambda x: -x[1])[:10]
+    if not rows:
+        return await inter.response.send_message("Nobody's playing yet! `/ping` to join the game. 🎮")
+    medals = ["🥇", "🥈", "🥉"] + ["▫️"] * 7
+    out = ["## 🏆 Sketchbook leaderboard"] + [f"{medals[i]} <@{u}>: **{p} pts** · 🔥 {streak(u)}" for i, (u, p) in enumerate(rows)]
+    await inter.response.send_message("\n".join(out), allowed_mentions=discord.AllowedMentions.none())
 
 
 @tree.command(name="reset", description="Stop any guided chat and start fresh")
@@ -1169,6 +1407,29 @@ async def daily_post():
 
 @daily_post.before_loop
 async def _wait_ready():
+    await bot.wait_until_ready()
+
+
+@tasks.loop(minutes=1)
+async def ping_loop():
+    now = dt.datetime.now(LOCAL_TZ)
+    today = now.date().isoformat()
+    for uid, p in list(DATA["pings"].items()):
+        if p.get("last") == today:
+            continue
+        h, m = map(int, p["time"].split(":"))
+        due = now.replace(hour=h, minute=m, second=0, microsecond=0)
+        if due <= now <= due + dt.timedelta(hours=2):      # 2-hour grace in case the bot restarted
+            p["last"] = today
+            save_data()
+            try:
+                await send_ping(uid, p)
+            except Exception as e:
+                print("ping failed:", e)
+
+
+@ping_loop.before_loop
+async def _wait_ready2():
     await bot.wait_until_ready()
 
 

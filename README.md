@@ -25,6 +25,9 @@ AI is an optional extra that unlocks photo scanning and full answers to any ques
 | `/plan`, `/todo`, `/done` | Turns his to-do list into small daily chunks, then ticks them off with hype. |
 | `/log`, `/progress` | Logs what he did each day, builds a **streak** 🔥, and shows everything he's achieved so far. |
 | Morning reminders | Each morning, he gets a DM with that day's tasks from his plan. `/reminders off` stops them. |
+| `/ping` | **Daily sketchbook ping at his chosen time** (e.g. `/ping 6pm`), in that channel, **tagged with his username**, with his own message. Default: "SKETCHBOOK NOW! OR YOU WILL FOREVER HOLD THIS GUILT!" |
+| 🎮 Sketchbook game | Each ping has buttons: ✅ **Yes** = +10 · ❌ **Not today** = −5 · 👻 **no answer** = −10. 🔁 **Catch up**: after a double session, he can win back a missed day within 2 days (+5 bonus). 🔥 Every 7 days in a row = +25. Levels go from 💀 *In Debt to the Sketchbook* and 📄 *Blank Page* up to 👑 *Master of the Page*. Using `/log` also counts as a yes. |
+| `/sketched`, `/score`, `/leaderboard` | Answer without the buttons, see points, level, streak and a 7-day colour strip, and see who's winning in the server (anyone can play!). |
 | `/checkin`, `/stuck`, `/hype` | Support: mood buttons, "I'm stuck" options with a tiny next step for each, and encouragement. |
 
 ### Extra with AI switched on
@@ -120,6 +123,8 @@ It only stays online while your computer is on and the window is open.
 
 Type `/help` in your server. Slash commands can take a few minutes to appear the first time. If they don't show up, fully restart Discord.
 Good first test: `/brief`, then `/theme`, then `/describe`.
+**Set up Ef's ping:** in your shared channel, Ef types `/ping` and picks `time: 6pm`. It's tied to whoever runs it, so **he** needs to run it (or you can run it to test on yourself first).
+To change the points, levels or funny lines, edit the "Sketchbook Quest" section at the bottom of `content.py`.
 
 ---
 

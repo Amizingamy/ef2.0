@@ -164,3 +164,41 @@ LOOK_Q = {
 LOG_REPLIES = [
     "Logged! ✍️", "Nice, that counts. ✅", "Added to your log. Look at you go. 🔥", "Logged. Every page is progress. 🌱",
 ]
+
+# ---------- Sketchbook Quest (the streak game)
+DEFAULT_PING = "🎨 **SKETCHBOOK NOW! OR YOU WILL FOREVER HOLD THIS GUILT!**"
+POINTS_YES = 10          # did sketchbook today
+POINTS_NO = -5           # honest "not today"
+POINTS_MISS = -10        # didn't answer at all (honesty pays!)
+POINTS_CATCHUP = 5       # bonus on top of winning back what you lost
+STREAK_BONUS = 25        # every 7 days in a row
+CATCHUP_DAYS = 2         # how many days back you can still catch up
+
+LEVELS = [  # (points needed, title)
+    (-10**9, "💀 In Debt to the Sketchbook"),
+    (0, "📄 Blank Page"),
+    (50, "✏️ Doodler"),
+    (150, "🖍️ Sketcher"),
+    (300, "🎨 Artist in Training"),
+    (500, "🖌️ Page Filler"),
+    (800, "🏆 Sketchbook Legend"),
+    (1200, "👑 Master of the Page"),
+]
+YES_LINES = [
+    "YES. The sketchbook is pleased. 🙌", "Another page conquered. 🗡️", "That's how it's done. 🔥",
+    "The guilt has been defeated. ✨", "Sketchbook fed. It purrs. 🐈", "Look at you, actually doing it. Proud. 🤍",
+]
+NO_LINES = [
+    "Honest answer, respect. 🫡 But the sketchbook is… disappointed.",
+    "Okay. The sketchbook will remember this. 👁️",
+    "Noted. Somewhere, a blank page sheds a single tear. 🥲",
+    "Fair. Tomorrow we ride again. 🐎",
+]
+MISS_LINES = [
+    "💀 You ghosted the sketchbook yesterday.", "👁️ The sketchbook noticed you didn't show up yesterday.",
+    "🕯️ Yesterday's page waited for you. All night.",
+]
+CATCHUP_LINES = [
+    "🔁 Comeback! Lost day reclaimed. The sketchbook forgives you. 😌",
+    "🔁 Time recouped. Streak saved. Main character energy. ✨",
+]
