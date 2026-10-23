@@ -1,0 +1,5 @@
+discord.py>=2.4
+tzdata
+# Optional, only needed if you add an ANTHROPIC_API_KEY for AI chat, /ask answers and photo scanning:
+anthropic
+Pillow

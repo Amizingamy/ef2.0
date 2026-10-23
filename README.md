@@ -1,6 +1,7 @@
 # ef2.0
 A bot for ef to use as a study buddy or guidance for his artwork
-# Sketchbook Buddy: setup guide
+
+## Sketchbook Buddy: setup guide
 
 A Discord bot built on the Art Toolkit. It runs as a **normal bot** and doesn't need a Claude subscription.
 AI is an optional extra that unlocks photo scanning and full answers to any question.

@@ -1,0 +1,2610 @@
+{
+ "formal_elements": [
+  {
+   "word": "Line",
+   "meaning": "A mark that moves across a surface. Can be thick, thin, loose or careful.",
+   "example": "\"I used a continuous line so the drawing feels fluid and quick.\""
+  },
+  {
+   "word": "Tone",
+   "meaning": "How light or dark something is.",
+   "example": "\"Strong tonal contrast makes the face look dramatic.\""
+  },
+  {
+   "word": "Colour",
+   "meaning": "Hue, brightness and how colours work together.",
+   "example": "\"The muted palette gives the piece a calm mood.\""
+  },
+  {
+   "word": "Texture",
+   "meaning": "How a surface feels, or looks like it would feel.",
+   "example": "\"Layering PVA and tissue built up a rough, worn texture.\""
+  },
+  {
+   "word": "Shape",
+   "meaning": "A flat, 2D area with an outline.",
+   "example": "\"I simplified the leaves into bold shapes.\""
+  },
+  {
+   "word": "Form",
+   "meaning": "A 3D object, or something that looks 3D.",
+   "example": "\"Shading around the edges gives the shell form.\""
+  },
+  {
+   "word": "Space",
+   "meaning": "The area around and between things (positive and negative space).",
+   "example": "\"The negative space makes the figure feel isolated.\""
+  },
+  {
+   "word": "Pattern",
+   "meaning": "A design that repeats.",
+   "example": "\"The repeated pattern creates rhythm across the page.\""
+  },
+  {
+   "word": "Composition",
+   "meaning": "How everything is arranged on the page.",
+   "example": "\"I cropped the composition so the eye goes straight to the hands.\""
+  },
+  {
+   "word": "Scale",
+   "meaning": "How big or small something is, compared to other things.",
+   "example": "\"Making the object huge changes how it feels.\""
+  },
+  {
+   "word": "Contrast",
+   "meaning": "Strong differences: light/dark, rough/smooth, big/small.",
+   "example": "\"I wanted contrast between the soft fabric and the sharp metal.\""
+  }
+ ],
+ "describing_words": {
+  "Line": [
+   "fluid",
+   "jagged",
+   "gestural",
+   "delicate",
+   "bold",
+   "broken",
+   "continuous",
+   "expressive",
+   "controlled",
+   "hesitant",
+   "scratchy",
+   "sweeping"
+  ],
+  "Tone": [
+   "subtle",
+   "dramatic",
+   "graduated",
+   "high-contrast",
+   "muted",
+   "shadowy",
+   "luminous",
+   "flat",
+   "deep",
+   "soft"
+  ],
+  "Colour": [
+   "vibrant",
+   "muted",
+   "saturated",
+   "complementary",
+   "harmonious",
+   "warm",
+   "cool",
+   "monochrome",
+   "earthy",
+   "acidic",
+   "pastel",
+   "clashing"
+  ],
+  "Texture": [
+   "rough",
+   "smooth",
+   "layered",
+   "tactile",
+   "scratched",
+   "worn",
+   "glossy",
+   "matte",
+   "built-up",
+   "eroded",
+   "crumpled",
+   "brittle"
+  ],
+  "Composition": [
+   "balanced",
+   "asymmetrical",
+   "cropped",
+   "cluttered",
+   "minimal",
+   "dynamic",
+   "central",
+   "off-centre",
+   "fragmented",
+   "overlapping",
+   "framed",
+   "busy"
+  ],
+  "Mood": [
+   "calm",
+   "unsettling",
+   "nostalgic",
+   "chaotic",
+   "intimate",
+   "playful",
+   "eerie",
+   "melancholic",
+   "tense",
+   "hopeful",
+   "lonely",
+   "energetic"
+  ]
+ },
+ "technique_words": {
+  "Drawing": "mark-making, hatching, cross-hatching, blending, continuous line, blind contour, smudging, erasing into, observational drawing",
+  "Paint": "wash, impasto (thick paint), glazing (thin see-through layers), dry brush, wet-on-wet, sgraffito (scratching into it), layering",
+  "Printmaking": "monoprint, collagraph, lino print, drypoint, screen print, relief print, registration, edition, plate",
+  "Collage & mixed media": "collage, assemblage, image transfer, tearing, layering, stitching, wax resist, bleach, ink washes",
+  "3D": "maquette (small test model), armature (inner support), casting, carving, construction, modelling, joining, surface finish",
+  "Photography & digital": "cropping, focus, depth of field, exposure, double exposure, scanning, digital collage, photo manipulation",
+  "Graphic communication": "typography, layout, grid, hierarchy, legibility, colour palette, icon, branding, audience",
+  "Fashion & textiles": "silhouette, drape, toile (test garment), embellishment, embroidery, pleating, dyeing, print repeat, fabric manipulation"
+ },
+ "research_words": [
+  {
+   "word": "Primary research",
+   "meaning": "Things you made or collected first-hand: your own drawings, photos, objects, visits, sketches from life."
+  },
+  {
+   "word": "Secondary research",
+   "meaning": "Things made by someone else: an artist's work, a book, a website, a film."
+  },
+  {
+   "word": "Contextual research",
+   "meaning": "Finding out the story around a piece: when, where, why it was made, and what it was reacting to."
+  },
+  {
+   "word": "Visual research",
+   "meaning": "Collecting images, colours and textures to feed your ideas."
+  }
+ ],
+ "swaps": [
+  {
+   "weak": "\"It's nice\"",
+   "better": "\"The soft tones create a calm, gentle mood.\""
+  },
+  {
+   "weak": "\"I like it\"",
+   "better": "\"I like how the torn edges make it feel fragile, because...\""
+  },
+  {
+   "weak": "\"It went wrong\"",
+   "better": "\"The ink bled more than I expected, so next I'll try...\""
+  },
+  {
+   "weak": "\"It's messy\"",
+   "better": "\"The loose, gestural marks give it energy.\""
+  },
+  {
+   "weak": "\"It's cool\"",
+   "better": "\"The bold contrast grabs your attention straight away.\""
+  },
+  {
+   "weak": "\"I did a drawing of...\"",
+   "better": "\"I made an observational study of... to explore...\""
+  },
+  {
+   "weak": "\"I copied the artist\"",
+   "better": "\"I responded to [artist]'s technique by...\""
+  },
+  {
+   "weak": "\"It's finished\"",
+   "better": "\"I think this piece is resolved because...\""
+  }
+ ],
+ "stages": [
+  {
+   "stage": "1. Exploring",
+   "what": "You try lots of materials and disciplines to find out what you love. This is where you are now.",
+   "graded": "Pass"
+  },
+  {
+   "stage": "2. Pathway",
+   "what": "You choose a specialism, such as Fine Art, 3D, Graphic Communication or Fashion/Textiles.",
+   "graded": "Pass"
+  },
+  {
+   "stage": "3. Final Major Project",
+   "what": "Your own self-directed project, start to finish. This decides your final grade.",
+   "graded": "Pass, Merit or Distinction"
+  }
+ ],
+ "marking_areas": [
+  {
+   "area": "Context",
+   "plain": "Do you understand where your work fits, and what you're aiming for?",
+   "show": "Links to artists and designers, and what your aim is."
+  },
+  {
+   "area": "Research",
+   "plain": "Did you gather lots of different sources and actually use them?",
+   "show": "Where each source came from and what it gave you."
+  },
+  {
+   "area": "Developing your practice",
+   "plain": "Are you building skills and trying lots of techniques?",
+   "show": "What technique you used and how you did it."
+  },
+  {
+   "area": "Problem solving",
+   "plain": "When something didn't work, did you try another way?",
+   "show": "What went wrong and what you changed."
+  },
+  {
+   "area": "Planning and progress",
+   "plain": "Are you managing your own time and setting your own goals?",
+   "show": "Plans, next steps, and what you'll try next."
+  },
+  {
+   "area": "Evaluation and reflection",
+   "plain": "Do you look back honestly and make decisions?",
+   "show": "What worked, what didn't, and why you chose what you chose."
+  },
+  {
+   "area": "Communicating and presenting",
+   "plain": "Is your work clear and nicely laid out?",
+   "show": "Headings, labels and a tidy layout. Less writing, more clarity."
+  }
+ ],
+ "starters": {
+  "Artist research page": [
+   "\"I chose [artist] because their work connects to my theme through...\"",
+   "\"What stands out to me is the way they use...\"",
+   "\"This makes me want to try...\""
+  ],
+  "Primary research (your own drawings and photos)": [
+   "\"I went to [place] to collect...\"",
+   "\"I photographed / drew this because...\"",
+   "\"I focused on the [texture/shape/colour] because...\""
+  ],
+  "Experiment and test page": [
+   "\"I tested [material] to see if...\"",
+   "\"I compared [A] and [B]. [A] worked better because...\"",
+   "\"This didn't go how I planned, but I discovered...\""
+  ],
+  "Development page (moving ideas forward)": [
+   "\"Building on my last test, I...\"",
+   "\"I combined [idea] with [technique] to...\"",
+   "\"I changed the scale / colour / material because...\""
+  ],
+  "Finished piece reflection": [
+   "\"My aim was to... I think I achieved this because...\"",
+   "\"If I did it again I would...\"",
+   "\"The strongest part is... because...\""
+  ],
+  "Planning": [
+   "\"My next steps are...\"",
+   "\"By [day] I want to have...\"",
+   "\"I still need more research on...\""
+  ]
+ },
+ "checklist": [
+  "Every page has at least one note on it.",
+  "Each artist I studied has my own opinion and a link to my work.",
+  "I've labelled primary and secondary research.",
+  "There are tests that didn't work, with notes on what I learned.",
+  "I've explained why I made my choices.",
+  "There are clear next steps throughout.",
+  "I've used proper art words (Part 1 has loads).",
+  "Pages are labelled and easy to follow."
+ ],
+ "cfpm": [
+  {
+   "heading": "Content (what)",
+   "questions": "What is it? What's it of? What's it about? Is there a message or story?",
+   "starters": "\"This work shows...\" \"The subject is...\" \"I think it's about...\""
+  },
+  {
+   "heading": "Form (how it looks)",
+   "questions": "Colours? Lines? Shapes? Texture? How is it arranged? How big is it?",
+   "starters": "\"The artist uses a [muted/vibrant] palette...\" \"The composition is...\""
+  },
+  {
+   "heading": "Process (how it's made)",
+   "questions": "What materials and techniques? How long might it take? Any steps you can see?",
+   "starters": "\"It's made using...\" \"The surface looks like it was built up by...\""
+  },
+  {
+   "heading": "Mood (how it feels)",
+   "questions": "How does it make you feel? What atmosphere does it have? Why?",
+   "starters": "\"It feels [calm/eerie/playful] because...\" \"The [colour/scale] creates a sense of...\""
+  }
+ ],
+ "artist_page_recipe": [
+  {
+   "step": "1. Title",
+   "what": "Artist's name, dates, where they're from, and what they do (painter, designer...)."
+  },
+  {
+   "step": "2. Images",
+   "what": "1 to 3 works, each labelled with title, date, and where you found the picture."
+  },
+  {
+   "step": "3. A few facts",
+   "what": "2 or 3 sentences in your own words. Only what matters to your project. No life story."
+  },
+  {
+   "step": "4. CFPM",
+   "what": "Analyse one work using Content, Form, Process, Mood."
+  },
+  {
+   "step": "5. Your opinion",
+   "what": "What you honestly think, with a reason. It's fine to dislike something if you say why."
+  },
+  {
+   "step": "6. The link",
+   "what": "How it connects to your theme or your work so far."
+  },
+  {
+   "step": "7. Your response",
+   "what": "Make something: a study, a technique test, or your own piece using their approach (next page)."
+  }
+ ],
+ "responses": [
+  {
+   "type": "Study",
+   "what": "Recreate a small section to understand how they did it.",
+   "example": "Copy a 10cm patch of a painting to learn their brushwork."
+  },
+  {
+   "type": "Technique test",
+   "what": "Use their method on your subject.",
+   "example": "Use their layering technique on your own photos."
+  },
+  {
+   "type": "Transform",
+   "what": "Change one thing: scale, colour, material or subject.",
+   "example": "Turn a flat painting into a 3D paper model."
+  },
+  {
+   "type": "Combine",
+   "what": "Mix two artists, or an artist and your own research.",
+   "example": "One artist's colour palette with another's mark-making."
+  }
+ ],
+ "theme_steps": [
+  {
+   "step": "1. Mind map",
+   "what": "10 minutes. Write everything the theme makes you think of, including weird ones. Weird is good."
+  },
+  {
+   "step": "2. Go and collect",
+   "what": "Primary research: draw and photograph real things. Start close to home."
+  },
+  {
+   "step": "3. Find two artists",
+   "what": "One that clearly fits, one that's a bit unexpected. Part 3 shows you how to write about them."
+  },
+  {
+   "step": "4. Test three materials",
+   "what": "Try the same idea in three different ways. Note what each one does."
+  },
+  {
+   "step": "5. Narrow it down",
+   "what": "Which bit excites you most? Follow that. You don't have to cover the whole theme."
+  }
+ ],
+ "themes": [
+  {
+   "name": "Identity",
+   "meaning": "Who you are and what shapes you: family, culture, interests, and how others see you.",
+   "questions": [
+    "What objects say the most about you?",
+    "How is the online you different from the real-life you?",
+    "What do you show people, and what do you keep hidden?",
+    "Where do you come from, and does it show?"
+   ],
+   "words": [
+    "self",
+    "persona",
+    "heritage",
+    "mask",
+    "reflection",
+    "belonging",
+    "labels",
+    "inner / outer",
+    "layers",
+    "distortion",
+    "mirror",
+    "roots"
+   ],
+   "artists": [
+    {
+     "name": "Frida Kahlo",
+     "note": "Painter. Self-portraits packed with personal symbols."
+    },
+    {
+     "name": "Cindy Sherman",
+     "note": "Photographer. Photographs herself as invented characters."
+    },
+    {
+     "name": "Kehinde Wiley",
+     "note": "Painter. Puts modern sitters into poses from old portraits."
+    },
+    {
+     "name": "Grayson Perry",
+     "note": "Ceramics and tapestry about class and identity."
+    },
+    {
+     "name": "Yinka Shonibare",
+     "note": "Sculpture and textiles using Dutch wax print fabric to question culture."
+    }
+   ],
+   "research": "Mirror self-portraits, photos of objects in your room, family photos, your own handwriting.",
+   "test": "Draw yourself in three different materials. Layer a portrait over a photo of something meaningful."
+  },
+  {
+   "name": "Natural Forms",
+   "meaning": "Shapes and patterns from nature: shells, plants, bones, seeds.",
+   "questions": [
+    "What do things look like really close up?",
+    "How does nature repeat the same patterns?",
+    "What happens when a tiny natural form is made huge?",
+    "How do things grow, and how do they die back?"
+   ],
+   "words": [
+    "organic",
+    "spiral",
+    "symmetry",
+    "growth",
+    "cellular",
+    "fragile",
+    "veins",
+    "segments",
+    "curve",
+    "intricate",
+    "skeletal",
+    "seed"
+   ],
+   "artists": [
+    {
+     "name": "Karl Blossfeldt",
+     "note": "Photographer. Plant close-ups that look like sculpture."
+    },
+    {
+     "name": "Georgia O'Keeffe",
+     "note": "Painter. Huge close-up flowers and bones."
+    },
+    {
+     "name": "Barbara Hepworth",
+     "note": "Sculptor. Smooth organic forms pierced with holes."
+    },
+    {
+     "name": "Ernst Haeckel",
+     "note": "Illustrator. Detailed drawings of sea creatures."
+    },
+    {
+     "name": "Iris van Herpen",
+     "note": "Fashion designer. Couture inspired by nature."
+    }
+   ],
+   "research": "Shells and pebbles on a beach, plants in a local park, seed heads, leaves, macro photos on your phone.",
+   "test": "Draw the same object at five different sizes. Print with real leaves."
+  },
+  {
+   "name": "Structures and Architecture",
+   "meaning": "Buildings, frameworks, bridges, scaffolding: anything built, and how it holds together.",
+   "questions": [
+    "What's the skeleton under the surface?",
+    "How do old and new buildings sit side by side?",
+    "How does a structure feel from inside compared to outside?",
+    "What's the gap between a plan and the real thing?"
+   ],
+   "words": [
+    "framework",
+    "grid",
+    "angular",
+    "geometric",
+    "perspective",
+    "support",
+    "facade",
+    "scaffolding",
+    "linear",
+    "industrial",
+    "balance",
+    "tension"
+   ],
+   "artists": [
+    {
+     "name": "Zaha Hadid",
+     "note": "Architect. Flowing, curved, futuristic buildings."
+    },
+    {
+     "name": "Ian Murphy",
+     "note": "Mixed media. Layered drawings of buildings in ink, collage and paint."
+    },
+    {
+     "name": "Bernd and Hilla Becher",
+     "note": "Photographers. Grids of black-and-white industrial structures."
+    },
+    {
+     "name": "Rachel Whiteread",
+     "note": "Sculptor. Casts the empty spaces in and around buildings."
+    }
+   ],
+   "research": "Bridges, piers, stations, modern and old buildings in your town, cranes and scaffolding.",
+   "test": "Draw a building in one continuous line, then rebuild it as a small card maquette. Take rubbings of brick and metal."
+  },
+  {
+   "name": "Decay and Transformation",
+   "meaning": "How things rust, rot, weather, break down, or change into something new.",
+   "questions": [
+    "What's beautiful about something falling apart?",
+    "What does time do to a surface?",
+    "Can you speed decay up, or reverse it?",
+    "What's left behind afterwards?"
+   ],
+   "words": [
+    "rust",
+    "erosion",
+    "corrosion",
+    "peeling",
+    "crumbling",
+    "weathered",
+    "stain",
+    "residue",
+    "ruin",
+    "fragile",
+    "layered",
+    "transformation"
+   ],
+   "artists": [
+    {
+     "name": "Anselm Kiefer",
+     "note": "Painter and sculptor. Huge textured works using lead, straw and ash."
+    },
+    {
+     "name": "Alberto Burri",
+     "note": "Painter. Burnt plastic, sacking and cracked surfaces."
+    },
+    {
+     "name": "Sam Taylor-Johnson",
+     "note": "Artist. Still Life, a time-lapse film of fruit rotting."
+    },
+    {
+     "name": "Kurt Schwitters",
+     "note": "Collage made from scraps and rubbish."
+    },
+    {
+     "name": "Martin Margiela",
+     "note": "Fashion. Deconstructed, unfinished-looking garments."
+    }
+   ],
+   "research": "Peeling paint, rusty seafront railings, old buildings, fruit left out for a week and photographed every day.",
+   "test": "Stain paper with tea, coffee or rust. Distress a surface with sandpaper or bleach (ask your tutor first)."
+  },
+  {
+   "name": "Place and Belonging",
+   "meaning": "The places that make you who you are: home, a town, a landscape, a room.",
+   "questions": [
+    "What makes somewhere feel like home?",
+    "How does a place change from day to night?",
+    "What do you notice on a route you take every day?",
+    "Where do you feel you don't belong?"
+   ],
+   "words": [
+    "home",
+    "landscape",
+    "familiar",
+    "threshold",
+    "belonging",
+    "rooted",
+    "atmosphere",
+    "community",
+    "local",
+    "memory",
+    "boundary",
+    "journey"
+   ],
+   "artists": [
+    {
+     "name": "Do Ho Suh",
+     "note": "Sculptor. Life-size see-through fabric copies of homes he's lived in."
+    },
+    {
+     "name": "Kyffin Williams",
+     "note": "Painter. Thick palette-knife paintings of Welsh landscapes."
+    },
+    {
+     "name": "Edward Hopper",
+     "note": "Painter. Quiet, lonely scenes of American towns and rooms."
+    },
+    {
+     "name": "L.S. Lowry",
+     "note": "Painter. Crowds of figures in northern industrial towns."
+    }
+   ],
+   "research": "Your street, your bedroom, the view from your window at different times, your daily commute.",
+   "test": "Make a map that isn't about geography (feelings, sounds, smells). Draw one place in three kinds of weather."
+  },
+  {
+   "name": "Memory and Nostalgia",
+   "meaning": "How we remember the past, what we keep, and what we forget.",
+   "questions": [
+    "What object holds a memory for you?",
+    "How do memories fade or blur?",
+    "What does childhood look like to you now?",
+    "Whose memories do old photos keep?"
+   ],
+   "words": [
+    "nostalgia",
+    "faded",
+    "blurred",
+    "archive",
+    "keepsake",
+    "trace",
+    "fragment",
+    "ghostly",
+    "sentimental",
+    "worn",
+    "forgotten",
+    "layered"
+   ],
+   "artists": [
+    {
+     "name": "Joseph Cornell",
+     "note": "Small glass-fronted boxes filled with found objects."
+    },
+    {
+     "name": "Christian Boltanski",
+     "note": "Installations of old photos, archives and lights about memory and loss."
+    },
+    {
+     "name": "Louise Bourgeois",
+     "note": "Sculpture and fabric works drawn from childhood memories."
+    },
+    {
+     "name": "Gerhard Richter",
+     "note": "Painter. Blurred paintings made from photographs."
+    }
+   ],
+   "research": "Copies of family photos, childhood objects, letters, tickets, and a family member's story about the past.",
+   "test": "Transfer a photo onto fabric. Fade an image by sanding it, washing it, or layering tracing paper over it."
+  },
+  {
+   "name": "The Body",
+   "meaning": "The human figure: how it moves, what it feels, and how it's seen.",
+   "questions": [
+    "What can hands alone say?",
+    "How do you show a body moving?",
+    "What if you treat the body like a landscape?",
+    "How do clothes change the shape of a body?"
+   ],
+   "words": [
+    "figure",
+    "gesture",
+    "posture",
+    "anatomy",
+    "movement",
+    "proportion",
+    "silhouette",
+    "pose",
+    "fragment",
+    "flesh",
+    "distortion",
+    "vulnerable"
+   ],
+   "artists": [
+    {
+     "name": "Egon Schiele",
+     "note": "Painter. Tense, expressive line drawings of figures."
+    },
+    {
+     "name": "Jenny Saville",
+     "note": "Painter. Huge, close-up paintings of bodies."
+    },
+    {
+     "name": "Antony Gormley",
+     "note": "Sculptor. Figures cast from his own body."
+    },
+    {
+     "name": "Ron Mueck",
+     "note": "Sculptor. Hyperreal figures at strange scales."
+    },
+    {
+     "name": "Alexander McQueen",
+     "note": "Fashion. Dramatic garments that reshape the body."
+    }
+   ],
+   "research": "Life drawing classes, your own hands and feet, 30-second sketches of people on a bus or train.",
+   "test": "Fill a page with 30-second gesture drawings. Make small figures from wire or masking tape."
+  },
+  {
+   "name": "The City",
+   "meaning": "Busy streets, crowds, signs, noise and transport: the energy of urban life.",
+   "questions": [
+    "What would the sound of a city look like drawn?",
+    "What's the city like at night?",
+    "What gets overlooked: drains, signs, litter?",
+    "How do people move through a busy space?"
+   ],
+   "words": [
+    "urban",
+    "crowded",
+    "chaotic",
+    "signage",
+    "concrete",
+    "neon",
+    "rhythm",
+    "grid",
+    "graffiti",
+    "layered",
+    "transport",
+    "energy"
+   ],
+   "artists": [
+    {
+     "name": "Stephen Wiltshire",
+     "note": "Draws detailed city panoramas from memory."
+    },
+    {
+     "name": "Julie Mehretu",
+     "note": "Painter. Layered abstract works built on architectural plans."
+    },
+    {
+     "name": "Jean-Michel Basquiat",
+     "note": "Painter. Raw, street-inspired works mixing words and images."
+    },
+    {
+     "name": "Saul Leiter",
+     "note": "Photographer. Colourful street photos full of rain and reflections."
+    }
+   ],
+   "research": "Busy shopping streets, markets, stations, and signs, tickets and maps to use in collage.",
+   "test": "Collage with tickets, maps and receipts. Draw a scene for five minutes, then draw it again from memory."
+  },
+  {
+   "name": "Hidden and Revealed",
+   "meaning": "What's covered, concealed or disguised, and what gets uncovered.",
+   "questions": [
+    "What do people hide?",
+    "What's inside things?",
+    "What happens when you wrap or cover something?",
+    "What only appears when you look closely?"
+   ],
+   "words": [
+    "concealed",
+    "veiled",
+    "disguise",
+    "camouflage",
+    "wrapped",
+    "secret",
+    "glimpse",
+    "mask",
+    "reveal",
+    "peel back",
+    "layered",
+    "shadow"
+   ],
+   "artists": [
+    {
+     "name": "Christo and Jeanne-Claude",
+     "note": "Wrapped entire buildings and landscapes in fabric."
+    },
+    {
+     "name": "René Magritte",
+     "note": "Painter. Faces hidden behind objects, like a floating apple."
+    },
+    {
+     "name": "Liu Bolin",
+     "note": "Paints himself so he disappears into the background."
+    },
+    {
+     "name": "Doris Salcedo",
+     "note": "Sculptor. Furniture filled with concrete, hiding traces of loss."
+    }
+   ],
+   "research": "Look inside things: cut fruit, old gadgets. Photograph through windows, net curtains, fences and frosted glass.",
+   "test": "Layer tracing paper or wax over an image. Wrap an object and draw it. Cut windows in a page to show the one beneath."
+  },
+  {
+   "name": "Boundaries and Barriers",
+   "meaning": "Lines that divide: fences, walls, borders, edges and rules.",
+   "questions": [
+    "What separates people from each other?",
+    "Where exactly is the edge between land and sea?",
+    "Who's inside, and who's left outside?",
+    "Can a barrier be invisible?"
+   ],
+   "words": [
+    "border",
+    "edge",
+    "divide",
+    "fence",
+    "threshold",
+    "enclosure",
+    "gap",
+    "crossing",
+    "limit",
+    "separation",
+    "line",
+    "barrier"
+   ],
+   "artists": [
+    {
+     "name": "Mona Hatoum",
+     "note": "Installation. Everyday objects turned threatening, about home and borders."
+    },
+    {
+     "name": "Doris Salcedo",
+     "note": "Shibboleth, a long crack cut into the floor of Tate Modern."
+    },
+    {
+     "name": "Ai Weiwei",
+     "note": "Installation. Large works about migration and borders."
+    },
+    {
+     "name": "Richard Serra",
+     "note": "Sculptor. Huge curved steel walls you walk between."
+    }
+   ],
+   "research": "Coastlines and riverbanks, sea walls, gates, railings and walls.",
+   "test": "Stitch, tape or wire across a drawing. Draw both sides of the same fence."
+  },
+  {
+   "name": "Fragments",
+   "meaning": "Broken pieces, parts of a whole, and things put back together.",
+   "questions": [
+    "What can a single piece tell you about the whole?",
+    "Can broken be beautiful?",
+    "How do you rebuild something?",
+    "What happens when you cut up and rearrange?"
+   ],
+   "words": [
+    "broken",
+    "shattered",
+    "incomplete",
+    "reassembled",
+    "cropped",
+    "splintered",
+    "mosaic",
+    "collage",
+    "cracked",
+    "repaired",
+    "scattered",
+    "pieces"
+   ],
+   "artists": [
+    {
+     "name": "Cornelia Parker",
+     "note": "Cold Dark Matter, a shed blown up and hung as fragments."
+    },
+    {
+     "name": "Hannah Höch",
+     "note": "Sharp photomontages cut from magazines."
+    },
+    {
+     "name": "David Hockney",
+     "note": "Photo \"joiners\": one scene built from many photos."
+    },
+    {
+     "name": "Kintsugi",
+     "note": "Japanese craft of mending broken pottery with gold."
+    }
+   ],
+   "research": "Sea glass and broken shells on the beach, chipped crockery, torn posters, your own old drawings cut up.",
+   "test": "Build a photo joiner of one scene. Cut a drawing into strips and rearrange them."
+  },
+  {
+   "name": "Light and Shadow",
+   "meaning": "How light shapes what we see, and what darkness hides.",
+   "questions": [
+    "How do shadows change through the day?",
+    "Can a shadow be the artwork?",
+    "What's light like in different weather?",
+    "What does darkness feel like?"
+   ],
+   "words": [
+    "chiaroscuro",
+    "silhouette",
+    "glow",
+    "contrast",
+    "reflection",
+    "translucent",
+    "luminous",
+    "cast shadow",
+    "dim",
+    "beam",
+    "flicker",
+    "dusk"
+   ],
+   "artists": [
+    {
+     "name": "Caravaggio",
+     "note": "Painter. Dramatic strong light and deep shadow."
+    },
+    {
+     "name": "Rembrandt",
+     "note": "Painter. Soft, glowing light on faces."
+    },
+    {
+     "name": "Olafur Eliasson",
+     "note": "The Weather Project, a giant artificial sun inside Tate Modern."
+    },
+    {
+     "name": "Tim Noble and Sue Webster",
+     "note": "Piles of rubbish that cast perfect shadow portraits."
+    },
+    {
+     "name": "Kara Walker",
+     "note": "Cut-paper silhouettes telling difficult histories."
+    }
+   ],
+   "research": "Shadows photographed at different times of day, a torch on objects in a dark room, light through glass and water.",
+   "test": "Draw only the shadows of an object. Use white chalk or charcoal on black paper."
+  },
+  {
+   "name": "Pattern and Repetition",
+   "meaning": "Things that repeat: shapes, marks, motifs and rhythms.",
+   "questions": [
+    "Where do you see repetition every day?",
+    "What happens when one thing is repeated hundreds of times?",
+    "When does a pattern become hypnotic?",
+    "What happens when you break a pattern?"
+   ],
+   "words": [
+    "repeat",
+    "motif",
+    "rhythm",
+    "tessellation",
+    "symmetry",
+    "grid",
+    "sequence",
+    "optical",
+    "ornamental",
+    "cluster",
+    "variation",
+    "mass"
+   ],
+   "artists": [
+    {
+     "name": "Yayoi Kusama",
+     "note": "Dots and repeated forms covering everything."
+    },
+    {
+     "name": "William Morris",
+     "note": "Designer. Repeating wallpaper and fabric patterns from nature."
+    },
+    {
+     "name": "Bridget Riley",
+     "note": "Painter. Op Art patterns that seem to move."
+    },
+    {
+     "name": "Andy Warhol",
+     "note": "Repeated screen-printed images."
+    },
+    {
+     "name": "M.C. Escher",
+     "note": "Printmaker. Interlocking tessellations."
+    }
+   ],
+   "research": "Tiles, brickwork, railings, fabric and packaging. Old buildings often have great tiled floors.",
+   "test": "Design a repeat tile and stamp or print it. Repeat one mark 100 times and see what it turns into."
+  },
+  {
+   "name": "Water and the Coast",
+   "meaning": "Sea, rain, rivers, reflections and tides.",
+   "questions": [
+    "How do you draw something that never stays still?",
+    "What does the sea leave behind?",
+    "How does water change light and colour?",
+    "What's it like to live by water?"
+   ],
+   "words": [
+    "fluid",
+    "tidal",
+    "reflection",
+    "ripple",
+    "surge",
+    "horizon",
+    "mist",
+    "current",
+    "translucent",
+    "calm",
+    "turbulent",
+    "erosion"
+   ],
+   "artists": [
+    {
+     "name": "J.M.W. Turner",
+     "note": "Painter. Stormy, misty seas full of light."
+    },
+    {
+     "name": "Hokusai",
+     "note": "Printmaker. The Great Wave off Kanagawa."
+    },
+    {
+     "name": "Maggi Hambling",
+     "note": "Painter. Energetic paintings of crashing North Sea waves."
+    },
+    {
+     "name": "Zaria Forman",
+     "note": "Huge realistic pastel drawings of ice and water."
+    },
+    {
+     "name": "Hiroshi Sugimoto",
+     "note": "Photographer. Calm black-and-white Seascapes."
+    }
+   ],
+   "research": "The nearest coast, river, lake or even puddles. Film the water moving. Collect sea glass, driftwood, seaweed.",
+   "test": "Drop ink onto wet paper. Sprinkle salt on watercolour. Draw the horizon every day for a week."
+  },
+  {
+   "name": "Journeys and Movement",
+   "meaning": "Travel, routes, motion and change, from a daily commute to a whole life.",
+   "questions": [
+    "How do you show movement in a still image?",
+    "What's your daily route really like?",
+    "What do you see from a train window?",
+    "Where do journeys start and end?"
+   ],
+   "words": [
+    "motion",
+    "blur",
+    "route",
+    "path",
+    "momentum",
+    "speed",
+    "flow",
+    "trace",
+    "direction",
+    "sequence",
+    "transition",
+    "travel"
+   ],
+   "artists": [
+    {
+     "name": "Eadweard Muybridge",
+     "note": "Photographer. Photo sequences showing how bodies move."
+    },
+    {
+     "name": "Giacomo Balla",
+     "note": "Futurist painter. Dynamism of a Dog on a Leash."
+    },
+    {
+     "name": "Richard Long",
+     "note": "Land artist. A Line Made by Walking."
+    },
+    {
+     "name": "Alexander Calder",
+     "note": "Sculptor. Hanging mobiles that move with the air."
+    }
+   ],
+   "research": "Your daily commute: photos, sketches, tickets, the view. Your route on a map. Slow-shutter phone photos.",
+   "test": "Draw on a moving bus or train. Make a sequence of drawings like frames of a film."
+  },
+  {
+   "name": "Objects and Collections",
+   "meaning": "Everyday things, and what our stuff says about us.",
+   "questions": [
+    "What do you collect, and why?",
+    "What makes an ordinary object special?",
+    "What happens when an everyday object becomes giant?",
+    "What's in your bag right now?"
+   ],
+   "words": [
+    "everyday",
+    "collection",
+    "archive",
+    "still life",
+    "arrangement",
+    "ordinary",
+    "display",
+    "curate",
+    "catalogue",
+    "personal",
+    "worn",
+    "mass-produced"
+   ],
+   "artists": [
+    {
+     "name": "Giorgio Morandi",
+     "note": "Painter. Quiet still lifes of the same bottles and jars."
+    },
+    {
+     "name": "Michael Craig-Martin",
+     "note": "Bold outline drawings of everyday objects in bright colour."
+    },
+    {
+     "name": "Claes Oldenburg",
+     "note": "Sculptor. Giant sculptures of everyday things."
+    },
+    {
+     "name": "Mark Dion",
+     "note": "Installation. Cabinets of curiosity full of collected objects."
+    }
+   ],
+   "research": "The contents of your bag or pockets, charity shop finds, and local museum collections of everyday life.",
+   "test": "Draw one object from five angles. Arrange a collection and photograph it from above."
+  }
+ ],
+ "artists": [
+  {
+   "name": "Ai Weiwei",
+   "meta": "b. 1957 · Chinese · Installation and activism",
+   "known_for": "Huge installations about freedom, migration and the value of everyday objects.",
+   "key_work": "Sunflower Seeds, 2010: 100 million hand-painted porcelain seeds at Tate Modern.",
+   "themes": [
+    "Boundaries and Barriers",
+    "Objects and Collections",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D"
+   ],
+   "borrow": "Repeat one small handmade object hundreds of times."
+  },
+  {
+   "name": "Anni Albers",
+   "meta": "1899–1994 · German-American · Textiles",
+   "known_for": "Bauhaus weaver who turned weaving into modern abstract art.",
+   "key_work": "Geometric woven wall hangings from the 1920s onwards.",
+   "themes": [
+    "Pattern and Repetition",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "Fashion/Textiles",
+    "Fine Art"
+   ],
+   "borrow": "Weave paper strips or yarn into a geometric grid."
+  },
+  {
+   "name": "El Anatsui",
+   "meta": "b. 1944 · Ghanaian · Sculpture",
+   "known_for": "Shimmering metal 'cloths' made from thousands of bottle tops joined with wire.",
+   "key_work": "Huge wall hangings that fold and drape like fabric.",
+   "themes": [
+    "Objects and Collections",
+    "Pattern and Repetition",
+    "Fragments"
+   ],
+   "pathways": [
+    "3D",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Join small found pieces with wire to make a flexible surface."
+  },
+  {
+   "name": "Giacomo Balla",
+   "meta": "1871–1958 · Italian · Futurist painter",
+   "known_for": "Showed speed and movement by repeating shapes, like frames of a film.",
+   "key_work": "Dynamism of a Dog on a Leash, 1912.",
+   "themes": [
+    "Journeys and Movement"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Repeat the outline of a moving thing in overlapping positions."
+  },
+  {
+   "name": "Banksy",
+   "meta": "Anonymous · British · Street art",
+   "known_for": "Sharp, funny stencilled street art with a political message.",
+   "key_work": "Girl with Balloon, 2002.",
+   "themes": [
+    "The City",
+    "Hidden and Revealed"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Cut a stencil and spray or sponge it in layers."
+  },
+  {
+   "name": "Jean-Michel Basquiat",
+   "meta": "1960–1988 · American · Painter",
+   "known_for": "Raw, energetic paintings mixing words, crowns, skulls and scribbles.",
+   "key_work": "Untitled (Skull), 1981.",
+   "themes": [
+    "The City",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Mix crossed-out words and quick drawings on one layered surface."
+  },
+  {
+   "name": "Bernd and Hilla Becher",
+   "meta": "1931–2007 and 1934–2015 · German · Photographers",
+   "known_for": "Black-and-white photos of industrial structures, shown in neat grids.",
+   "key_work": "Their 'typologies' of water towers and blast furnaces.",
+   "themes": [
+    "Structures and Architecture",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "Photography"
+   ],
+   "borrow": "Photograph many versions of one type of thing and display them in a grid."
+  },
+  {
+   "name": "Karl Blossfeldt",
+   "meta": "1865–1932 · German · Photographer",
+   "known_for": "Sharp close-up photos of plants that look like sculpture or ironwork.",
+   "key_work": "Urformen der Kunst (Art Forms in Nature), 1928.",
+   "themes": [
+    "Natural Forms"
+   ],
+   "pathways": [
+    "Photography",
+    "Fine Art"
+   ],
+   "borrow": "Photograph a plant really close up against a plain background."
+  },
+  {
+   "name": "Christian Boltanski",
+   "meta": "1944–2021 · French · Installation",
+   "known_for": "Moving installations of old photographs, clothes and lights about memory and loss.",
+   "key_work": "Rooms of found photos lit by small lamps.",
+   "themes": [
+    "Memory and Nostalgia",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Photography"
+   ],
+   "borrow": "Display old photos with light so they feel like a memorial."
+  },
+  {
+   "name": "Louise Bourgeois",
+   "meta": "1911–2010 · French-American · Sculpture and textiles",
+   "known_for": "Very personal work drawn from her childhood, including giant spiders and fabric pieces.",
+   "key_work": "Maman, 1999: a giant bronze spider.",
+   "themes": [
+    "Memory and Nostalgia",
+    "The Body",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Stitch, stuff or sculpt something that stands for a memory."
+  },
+  {
+   "name": "Alberto Burri",
+   "meta": "1915–1995 · Italian · Painter",
+   "known_for": "Used torn sacking, burnt plastic and cracked surfaces instead of paint.",
+   "key_work": "His Sacchi (sack) works from the 1950s.",
+   "themes": [
+    "Decay and Transformation",
+    "Fragments"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Build a surface from torn, burnt or patched materials (ask your tutor first)."
+  },
+  {
+   "name": "Alexander Calder",
+   "meta": "1898–1976 · American · Sculptor",
+   "known_for": "Invented the mobile: hanging sculptures that move with the air.",
+   "key_work": "His hanging mobiles of painted metal shapes.",
+   "themes": [
+    "Journeys and Movement",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Make a balancing mobile from wire and card shapes."
+  },
+  {
+   "name": "Caravaggio",
+   "meta": "1571–1610 · Italian · Painter",
+   "known_for": "Dramatic strong light and deep shadow (chiaroscuro).",
+   "key_work": "The Calling of Saint Matthew, 1599–1600.",
+   "themes": [
+    "Light and Shadow",
+    "The Body"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Photography"
+   ],
+   "borrow": "Light an object with one lamp in a dark room and draw it."
+  },
+  {
+   "name": "Christo and Jeanne-Claude",
+   "meta": "1935–2020 and 1935–2009 · Bulgarian and French · Installation",
+   "known_for": "Wrapped whole buildings, bridges and coastlines in fabric for a short time.",
+   "key_work": "Wrapped Reichstag, Berlin, 1995.",
+   "themes": [
+    "Hidden and Revealed",
+    "Boundaries and Barriers",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Wrap an object in fabric or paper and draw what's left."
+  },
+  {
+   "name": "Joseph Cornell",
+   "meta": "1903–1972 · American · Box assemblage",
+   "known_for": "Small glass-fronted boxes filled with found objects, like tiny dream worlds.",
+   "key_work": "His shadow boxes from the 1930s to 1960s.",
+   "themes": [
+    "Memory and Nostalgia",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "3D",
+    "Fine Art"
+   ],
+   "borrow": "Arrange found objects inside a small box."
+  },
+  {
+   "name": "Michael Craig-Martin",
+   "meta": "b. 1941 · Irish-born British · Artist",
+   "known_for": "Bold black outlines of everyday objects in bright, flat colours.",
+   "key_work": "An Oak Tree, 1973: a glass of water on a shelf.",
+   "themes": [
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Draw everyday objects in clean outline and fill them with flat colour."
+  },
+  {
+   "name": "Salvador Dalí",
+   "meta": "1904–1989 · Spanish · Surrealist",
+   "known_for": "Strange dream-like paintings, like melting clocks.",
+   "key_work": "The Persistence of Memory, 1931.",
+   "themes": [
+    "Memory and Nostalgia",
+    "Hidden and Revealed"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Combine two things that don't belong together."
+  },
+  {
+   "name": "Sonia Delaunay",
+   "meta": "1885–1979 · Ukrainian-born French · Painter and designer",
+   "known_for": "Bright colour circles and shapes across paintings, fabric and fashion.",
+   "key_work": "Her 'simultaneous' textiles and clothes from the 1920s.",
+   "themes": [
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fashion/Textiles",
+    "Fine Art"
+   ],
+   "borrow": "Turn a colour study into a fabric design."
+  },
+  {
+   "name": "Mark Dion",
+   "meta": "b. 1961 · American · Installation",
+   "known_for": "Collects, sorts and displays objects like a museum cabinet of curiosities.",
+   "key_work": "Tate Thames Dig, 1999: objects found on the Thames foreshore.",
+   "themes": [
+    "Objects and Collections",
+    "Water and the Coast"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D"
+   ],
+   "borrow": "Collect, label and display objects from one place."
+  },
+  {
+   "name": "Olafur Eliasson",
+   "meta": "b. 1967 · Danish-Icelandic · Installation",
+   "known_for": "Uses light, water and weather to change how you experience a space.",
+   "key_work": "The Weather Project, 2003: a giant artificial sun at Tate Modern.",
+   "themes": [
+    "Light and Shadow",
+    "Water and the Coast"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D"
+   ],
+   "borrow": "Play with light through water, mirrors or coloured film."
+  },
+  {
+   "name": "Tracey Emin",
+   "meta": "b. 1963 · British · Artist",
+   "known_for": "Very personal work in neon, embroidery, drawing and installation.",
+   "key_work": "My Bed, 1998.",
+   "themes": [
+    "Identity",
+    "Memory and Nostalgia",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Stitch or write your own words onto fabric."
+  },
+  {
+   "name": "M.C. Escher",
+   "meta": "1898–1972 · Dutch · Printmaker",
+   "known_for": "Mind-bending tessellations and impossible buildings.",
+   "key_work": "Relativity, 1953.",
+   "themes": [
+    "Pattern and Repetition",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Design a shape that tessellates and repeat it."
+  },
+  {
+   "name": "Zaria Forman",
+   "meta": "Contemporary · American · Pastel artist",
+   "known_for": "Huge, realistic pastel drawings of ice and water, made after visiting the polar regions.",
+   "key_work": "Large drawings of icebergs and waves.",
+   "themes": [
+    "Water and the Coast",
+    "Natural Forms"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Blend soft pastel with your fingers for water and ice."
+  },
+  {
+   "name": "Andy Goldsworthy",
+   "meta": "b. 1956 · British · Land artist",
+   "known_for": "Temporary sculptures made in nature from leaves, ice, stone and sticks.",
+   "key_work": "The film Rivers and Tides, 2001, shows him at work.",
+   "themes": [
+    "Natural Forms",
+    "Water and the Coast",
+    "Decay and Transformation"
+   ],
+   "pathways": [
+    "3D",
+    "Photography"
+   ],
+   "borrow": "Arrange natural materials outdoors and photograph them."
+  },
+  {
+   "name": "Antony Gormley",
+   "meta": "b. 1950 · British · Sculptor",
+   "known_for": "Figures based on casts of his own body, often in public spaces.",
+   "key_work": "Angel of the North, 1998.",
+   "themes": [
+    "The Body",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Trace or cast your own body as a starting point."
+  },
+  {
+   "name": "Zaha Hadid",
+   "meta": "1950–2016 · Iraqi-British · Architect",
+   "known_for": "Flowing, curved, futuristic buildings.",
+   "key_work": "London Aquatics Centre, 2011.",
+   "themes": [
+    "Structures and Architecture",
+    "The City"
+   ],
+   "pathways": [
+    "3D",
+    "Graphic Communication"
+   ],
+   "borrow": "Draw a building made only of sweeping curves."
+  },
+  {
+   "name": "Ernst Haeckel",
+   "meta": "1834–1919 · German · Scientific illustrator",
+   "known_for": "Detailed, symmetrical drawings of sea creatures and tiny life forms.",
+   "key_work": "Kunstformen der Natur (Art Forms in Nature), 1904.",
+   "themes": [
+    "Natural Forms",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Draw a natural object with careful symmetry and fine detail."
+  },
+  {
+   "name": "Maggi Hambling",
+   "meta": "b. 1945 · British · Painter and sculptor",
+   "known_for": "Energetic, gestural paintings of crashing waves.",
+   "key_work": "Scallop, 2003, a steel sculpture on Aldeburgh beach.",
+   "themes": [
+    "Water and the Coast"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D"
+   ],
+   "borrow": "Paint water fast with big, loose brush marks."
+  },
+  {
+   "name": "Mona Hatoum",
+   "meta": "b. 1952 · Palestinian-British · Installation",
+   "known_for": "Everyday objects turned uneasy or threatening, about home and borders.",
+   "key_work": "Hot Spot, 2013: a glowing red neon globe.",
+   "themes": [
+    "Boundaries and Barriers",
+    "Place and Belonging",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D"
+   ],
+   "borrow": "Change one thing about a familiar object to make it unsettling."
+  },
+  {
+   "name": "Barbara Hepworth",
+   "meta": "1903–1975 · British · Sculptor",
+   "known_for": "Smooth, organic sculptures pierced with holes.",
+   "key_work": "Her garden and studio in St Ives is now a museum.",
+   "themes": [
+    "Natural Forms",
+    "The Body"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Carve or model a smooth form with a hole through it."
+  },
+  {
+   "name": "Lubaina Himid",
+   "meta": "b. 1954 · Zanzibar-born British · Painter",
+   "known_for": "Bold, colourful work about Black history and identity. Won the Turner Prize in 2017.",
+   "key_work": "Naming the Money, 2004: 100 painted cut-out figures.",
+   "themes": [
+    "Identity",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Use pattern and colour to tell a story about people."
+  },
+  {
+   "name": "Hannah Höch",
+   "meta": "1889–1978 · German · Dada collage",
+   "known_for": "Sharp, funny photomontages cut from magazines.",
+   "key_work": "Cut with the Kitchen Knife, 1919–20.",
+   "themes": [
+    "Fragments",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Make a photomontage from magazine cuttings."
+  },
+  {
+   "name": "David Hockney",
+   "meta": "b. 1937 · British · Painter",
+   "known_for": "Bright paintings, iPad drawings and photo 'joiners' built from many photos.",
+   "key_work": "Pearblossom Highway, 1986 (a photo joiner).",
+   "themes": [
+    "Fragments",
+    "Place and Belonging",
+    "Water and the Coast"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Photography"
+   ],
+   "borrow": "Build one scene from lots of overlapping photos."
+  },
+  {
+   "name": "Katsushika Hokusai",
+   "meta": "1760–1849 · Japanese · Printmaker",
+   "known_for": "Woodblock prints of waves, mountains and everyday life.",
+   "key_work": "The Great Wave off Kanagawa, about 1831.",
+   "themes": [
+    "Water and the Coast",
+    "Natural Forms"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Simplify water into bold, curling shapes."
+  },
+  {
+   "name": "Edward Hopper",
+   "meta": "1882–1967 · American · Painter",
+   "known_for": "Quiet, lonely scenes of cities, diners and rooms.",
+   "key_work": "Nighthawks, 1942.",
+   "themes": [
+    "Place and Belonging",
+    "The City",
+    "Light and Shadow"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint an empty or lonely space with strong light."
+  },
+  {
+   "name": "Gwen John",
+   "meta": "1876–1939 · Welsh · Painter",
+   "known_for": "Quiet portraits and interiors in soft, muted colours. Born in Haverfordwest.",
+   "key_work": "A Corner of the Artist's Room in Paris, about 1907–09.",
+   "themes": [
+    "Place and Belonging",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint a quiet corner of a room in a limited palette."
+  },
+  {
+   "name": "Frida Kahlo",
+   "meta": "1907–1954 · Mexican · Painter",
+   "known_for": "Self-portraits full of personal symbols about pain, identity and heritage.",
+   "key_work": "The Two Fridas, 1939.",
+   "themes": [
+    "Identity",
+    "The Body"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Surround a self-portrait with objects that mean something to you."
+  },
+  {
+   "name": "Wassily Kandinsky",
+   "meta": "1866–1944 · Russian · Painter",
+   "known_for": "One of the first abstract painters. Linked colour and shape to music.",
+   "key_work": "Composition VII, 1913.",
+   "themes": [
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Paint what a piece of music looks like."
+  },
+  {
+   "name": "Anish Kapoor",
+   "meta": "b. 1954 · Indian-born British · Sculptor",
+   "known_for": "Huge mirror-polished and deep-coloured sculptures that play with space.",
+   "key_work": "Cloud Gate, Chicago, 2006.",
+   "themes": [
+    "Light and Shadow",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Use reflective surfaces to distort a space."
+  },
+  {
+   "name": "Rei Kawakubo",
+   "meta": "b. 1942 · Japanese · Fashion designer",
+   "known_for": "Founded Comme des Garçons. Strange, sculptural, deconstructed clothes.",
+   "key_work": "Her 1997 collection with padded lumps on the body.",
+   "themes": [
+    "The Body",
+    "Fragments"
+   ],
+   "pathways": [
+    "Fashion/Textiles"
+   ],
+   "borrow": "Change a garment's silhouette with padding or odd shapes."
+  },
+  {
+   "name": "Anselm Kiefer",
+   "meta": "b. 1945 · German · Painter and sculptor",
+   "known_for": "Huge, heavily textured works using lead, straw, ash and plaster.",
+   "key_work": "Large landscape paintings thick with real materials.",
+   "themes": [
+    "Decay and Transformation",
+    "Memory and Nostalgia",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Mix sand, PVA or plaster into paint for texture."
+  },
+  {
+   "name": "Gustav Klimt",
+   "meta": "1862–1918 · Austrian · Painter",
+   "known_for": "Rich decorative pattern and real gold leaf.",
+   "key_work": "The Kiss, 1907–08.",
+   "themes": [
+    "Pattern and Repetition",
+    "The Body"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Fill clothing or background areas with decorative pattern."
+  },
+  {
+   "name": "Yayoi Kusama",
+   "meta": "b. 1929 · Japanese · Artist",
+   "known_for": "Dots and repeated forms covering everything, including Infinity Mirror Rooms.",
+   "key_work": "Her spotted pumpkin sculptures.",
+   "themes": [
+    "Pattern and Repetition",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art",
+    "3D"
+   ],
+   "borrow": "Cover an object or space completely in one repeated mark."
+  },
+  {
+   "name": "Dorothea Lange",
+   "meta": "1895–1965 · American · Photographer",
+   "known_for": "Documentary photos of people living through hard times.",
+   "key_work": "Migrant Mother, 1936.",
+   "themes": [
+    "Identity",
+    "Journeys and Movement"
+   ],
+   "pathways": [
+    "Photography"
+   ],
+   "borrow": "Take portraits that tell a story about someone's life."
+  },
+  {
+   "name": "Saul Leiter",
+   "meta": "1923–2013 · American · Photographer",
+   "known_for": "Colourful street photos full of rain, reflections and blur.",
+   "key_work": "His colour street photos of New York from the 1950s.",
+   "themes": [
+    "The City",
+    "Light and Shadow",
+    "Water and the Coast"
+   ],
+   "pathways": [
+    "Photography"
+   ],
+   "borrow": "Photograph a street through a wet or steamy window."
+  },
+  {
+   "name": "Liu Bolin",
+   "meta": "b. 1973 · Chinese · Photography and performance",
+   "known_for": "Paints himself to blend into backgrounds, then photographs it.",
+   "key_work": "His Hiding in the City series.",
+   "themes": [
+    "Hidden and Revealed",
+    "The City",
+    "Identity"
+   ],
+   "pathways": [
+    "Photography",
+    "Fine Art"
+   ],
+   "borrow": "Camouflage an object so it disappears into its background."
+  },
+  {
+   "name": "Richard Long",
+   "meta": "b. 1945 · British · Land artist",
+   "known_for": "Art made by walking: lines, circles and maps of journeys.",
+   "key_work": "A Line Made by Walking, 1967.",
+   "themes": [
+    "Journeys and Movement",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Photography"
+   ],
+   "borrow": "Record a walk with photos, maps and collected objects."
+  },
+  {
+   "name": "L.S. Lowry",
+   "meta": "1887–1976 · English · Painter",
+   "known_for": "Crowds of thin 'matchstick' figures in northern industrial towns.",
+   "key_work": "Going to the Match, 1953.",
+   "themes": [
+    "The City",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Draw a busy crowd with simple, repeated figures."
+  },
+  {
+   "name": "René Magritte",
+   "meta": "1898–1967 · Belgian · Surrealist",
+   "known_for": "Everyday things made strange: hidden faces, floating apples, pipes that aren't pipes.",
+   "key_work": "The Son of Man, 1964.",
+   "themes": [
+    "Hidden and Revealed",
+    "Identity",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Hide part of a portrait behind an unexpected object."
+  },
+  {
+   "name": "Martin Margiela",
+   "meta": "b. 1957 · Belgian · Fashion designer",
+   "known_for": "Deconstructed clothes that look unfinished or turned inside out.",
+   "key_work": "Founded Maison Martin Margiela, 1988.",
+   "themes": [
+    "Fragments",
+    "Decay and Transformation"
+   ],
+   "pathways": [
+    "Fashion/Textiles"
+   ],
+   "borrow": "Take a garment apart and put it back together differently."
+  },
+  {
+   "name": "Henri Matisse",
+   "meta": "1869–1954 · French · Painter and designer",
+   "known_for": "Bright colour, and late in life 'drawing with scissors' using paper cut-outs.",
+   "key_work": "The Snail, 1953.",
+   "themes": [
+    "Natural Forms",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Cut shapes straight from painted paper with no drawing first."
+  },
+  {
+   "name": "Alexander McQueen",
+   "meta": "1969–2010 · British · Fashion designer",
+   "known_for": "Dramatic, theatrical clothes that reshape the body, often inspired by nature.",
+   "key_work": "Plato's Atlantis collection, 2010.",
+   "themes": [
+    "The Body",
+    "Natural Forms",
+    "Water and the Coast"
+   ],
+   "pathways": [
+    "Fashion/Textiles"
+   ],
+   "borrow": "Design a garment inspired by a natural form."
+  },
+  {
+   "name": "Julie Mehretu",
+   "meta": "b. 1970 · Ethiopian-American · Painter",
+   "known_for": "Huge layered abstract paintings built on architectural plans and maps.",
+   "key_work": "Large paintings layering city plans with energetic marks.",
+   "themes": [
+    "The City",
+    "Structures and Architecture",
+    "Journeys and Movement"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Layer maps or plans with fast marks on top."
+  },
+  {
+   "name": "Issey Miyake",
+   "meta": "1938–2022 · Japanese · Fashion designer",
+   "known_for": "Famous for pleated fabric that moves with the body.",
+   "key_work": "Pleats Please line, from 1993.",
+   "themes": [
+    "The Body",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fashion/Textiles"
+   ],
+   "borrow": "Experiment with pleating and folding fabric or paper."
+  },
+  {
+   "name": "Piet Mondrian",
+   "meta": "1872–1944 · Dutch · Painter",
+   "known_for": "Grids of black lines with blocks of red, yellow and blue.",
+   "key_work": "Composition with Red, Blue and Yellow, 1930.",
+   "themes": [
+    "Structures and Architecture",
+    "The City",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Simplify a view down to lines and blocks of colour."
+  },
+  {
+   "name": "Claude Monet",
+   "meta": "1840–1926 · French · Impressionist",
+   "known_for": "Painted changing light and weather, often the same scene again and again.",
+   "key_work": "Water Lilies series, about 1897–1926.",
+   "themes": [
+    "Light and Shadow",
+    "Water and the Coast",
+    "Natural Forms"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint the same view at different times of day."
+  },
+  {
+   "name": "Henry Moore",
+   "meta": "1898–1986 · British · Sculptor",
+   "known_for": "Large, smooth reclining figures inspired by bones, stones and landscape.",
+   "key_work": "His many Reclining Figure sculptures.",
+   "themes": [
+    "The Body",
+    "Natural Forms"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Turn a figure into simple, rounded forms."
+  },
+  {
+   "name": "Giorgio Morandi",
+   "meta": "1890–1964 · Italian · Painter",
+   "known_for": "Quiet still lifes of the same bottles and jars, in soft dusty colours.",
+   "key_work": "Still lifes painted over many decades.",
+   "themes": [
+    "Objects and Collections",
+    "Light and Shadow"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint a few simple objects in a muted palette."
+  },
+  {
+   "name": "William Morris",
+   "meta": "1834–1896 · English · Designer",
+   "known_for": "Repeating wallpaper and fabric patterns based on plants and birds.",
+   "key_work": "Strawberry Thief, 1883.",
+   "themes": [
+    "Pattern and Repetition",
+    "Natural Forms"
+   ],
+   "pathways": [
+    "Fashion/Textiles",
+    "Graphic Communication"
+   ],
+   "borrow": "Turn plant drawings into a repeating pattern."
+  },
+  {
+   "name": "Ron Mueck",
+   "meta": "b. 1958 · Australian · Sculptor",
+   "known_for": "Hyperreal human figures at strange sizes, either huge or tiny.",
+   "key_work": "Boy, 1999.",
+   "themes": [
+    "The Body",
+    "Identity"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Change the scale of something realistic to make it strange."
+  },
+  {
+   "name": "Edvard Munch",
+   "meta": "1863–1944 · Norwegian · Painter",
+   "known_for": "Expressive paintings about anxiety, love and fear.",
+   "key_work": "The Scream, 1893.",
+   "themes": [
+    "Identity",
+    "The Body"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Use colour and swirling line to show a feeling."
+  },
+  {
+   "name": "Ian Murphy",
+   "meta": "Contemporary · British · Mixed media",
+   "known_for": "Layered drawings of buildings in ink, collage, paint and charcoal.",
+   "key_work": "Mixed-media drawings of cities and architecture.",
+   "themes": [
+    "Structures and Architecture",
+    "The City",
+    "Decay and Transformation"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Draw a building over a collaged, inky background."
+  },
+  {
+   "name": "Eadweard Muybridge",
+   "meta": "1830–1904 · English · Photographer",
+   "known_for": "Photo sequences that showed how people and animals move.",
+   "key_work": "The Horse in Motion, 1878.",
+   "themes": [
+    "Journeys and Movement",
+    "The Body"
+   ],
+   "pathways": [
+    "Photography"
+   ],
+   "borrow": "Shoot a movement as a sequence of photos."
+  },
+  {
+   "name": "Louise Nevelson",
+   "meta": "1899–1988 · American · Sculptor",
+   "known_for": "Wall sculptures of wooden scraps in boxes, all painted one colour.",
+   "key_work": "Sky Cathedral, 1958.",
+   "themes": [
+    "Objects and Collections",
+    "Structures and Architecture",
+    "Fragments"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Paint a collection of scraps one colour to unify them."
+  },
+  {
+   "name": "Tim Noble and Sue Webster",
+   "meta": "b. 1966 and 1967 · British · Sculptors",
+   "known_for": "Piles of rubbish that cast perfect shadow portraits when lit.",
+   "key_work": "Dirty White Trash (with Gulls), 1998.",
+   "themes": [
+    "Light and Shadow",
+    "Objects and Collections",
+    "Hidden and Revealed"
+   ],
+   "pathways": [
+    "3D",
+    "Fine Art"
+   ],
+   "borrow": "Arrange objects so their shadow makes a picture."
+  },
+  {
+   "name": "Chris Ofili",
+   "meta": "b. 1968 · British · Painter",
+   "known_for": "Rich, layered paintings using glitter, collage and resin. Won the Turner Prize in 1998.",
+   "key_work": "No Woman, No Cry, 1998.",
+   "themes": [
+    "Identity",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Build a painting up in decorative layers."
+  },
+  {
+   "name": "Georgia O'Keeffe",
+   "meta": "1887–1986 · American · Painter",
+   "known_for": "Huge close-up flowers, bones and desert landscapes.",
+   "key_work": "Jimson Weed, 1932.",
+   "themes": [
+    "Natural Forms",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint something small at a huge, close-up scale."
+  },
+  {
+   "name": "Claes Oldenburg",
+   "meta": "1929–2022 · Swedish-American · Sculptor",
+   "known_for": "Giant sculptures of everyday objects, often with Coosje van Bruggen.",
+   "key_work": "Spoonbridge and Cherry, 1985–88.",
+   "themes": [
+    "Objects and Collections",
+    "The City"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Make an everyday object huge, or soft."
+  },
+  {
+   "name": "Cornelia Parker",
+   "meta": "b. 1956 · British · Sculptor",
+   "known_for": "Destroys objects, then hangs the pieces in the air.",
+   "key_work": "Cold Dark Matter: An Exploded View, 1991.",
+   "themes": [
+    "Fragments",
+    "Objects and Collections",
+    "Light and Shadow"
+   ],
+   "pathways": [
+    "3D",
+    "Fine Art"
+   ],
+   "borrow": "Suspend fragments on thread to rebuild an object in space."
+  },
+  {
+   "name": "Grayson Perry",
+   "meta": "b. 1960 · British · Ceramics and tapestry",
+   "known_for": "Pots and tapestries about class, taste and identity. Won the Turner Prize in 2003.",
+   "key_work": "The Vanity of Small Differences, 2012 (tapestries).",
+   "themes": [
+    "Identity",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "3D",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Decorate a form with images that tell your story."
+  },
+  {
+   "name": "Pablo Picasso",
+   "meta": "1881–1973 · Spanish · Painter",
+   "known_for": "Co-invented Cubism, showing many viewpoints at once.",
+   "key_work": "Guernica, 1937.",
+   "themes": [
+    "Fragments",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Draw an object from several angles in one picture."
+  },
+  {
+   "name": "Jackson Pollock",
+   "meta": "1912–1956 · American · Painter",
+   "known_for": "Dripped and poured paint onto canvas laid on the floor.",
+   "key_work": "Autumn Rhythm (Number 30), 1950.",
+   "themes": [
+    "Journeys and Movement",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Make marks with your whole arm by dripping or flicking."
+  },
+  {
+   "name": "Robert Rauschenberg",
+   "meta": "1925–2008 · American · Artist",
+   "known_for": "'Combines' that mixed painting with real objects and printed images.",
+   "key_work": "Monogram, 1955–59.",
+   "themes": [
+    "Objects and Collections",
+    "The City",
+    "Fragments"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Attach real objects to a painted surface."
+  },
+  {
+   "name": "Paula Rego",
+   "meta": "1935–2022 · Portuguese-British · Painter",
+   "known_for": "Powerful, story-like pictures of women, often based on fairy tales.",
+   "key_work": "The Dance, 1988.",
+   "themes": [
+    "Identity",
+    "Memory and Nostalgia",
+    "The Body"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Stage a scene with people or props, then draw it."
+  },
+  {
+   "name": "Rembrandt van Rijn",
+   "meta": "1606–1669 · Dutch · Painter",
+   "known_for": "Glowing light on faces and honest self-portraits.",
+   "key_work": "Self-Portrait with Two Circles, about 1665–69.",
+   "themes": [
+    "Light and Shadow",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Draw a self-portrait lit from one side."
+  },
+  {
+   "name": "Gerhard Richter",
+   "meta": "b. 1932 · German · Painter",
+   "known_for": "Blurred paintings from photos, and huge squeegee-dragged abstracts.",
+   "key_work": "Betty, 1988.",
+   "themes": [
+    "Memory and Nostalgia",
+    "Hidden and Revealed"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Photography"
+   ],
+   "borrow": "Paint from a photo, then blur it while it's wet."
+  },
+  {
+   "name": "Bridget Riley",
+   "meta": "b. 1931 · British · Painter",
+   "known_for": "Op Art patterns of lines and shapes that seem to move.",
+   "key_work": "Movement in Squares, 1961.",
+   "themes": [
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Gradually change a repeated shape to create movement."
+  },
+  {
+   "name": "Mark Rothko",
+   "meta": "1903–1970 · American · Painter",
+   "known_for": "Big soft-edged blocks of colour meant to create strong feelings.",
+   "key_work": "The Seagram Murals, now at Tate.",
+   "themes": [
+    "Light and Shadow"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Layer thin washes of colour to create a mood."
+  },
+  {
+   "name": "Doris Salcedo",
+   "meta": "b. 1958 · Colombian · Sculptor",
+   "known_for": "Quiet, powerful work about loss, using furniture and concrete.",
+   "key_work": "Shibboleth, 2007: a crack in the floor of Tate Modern.",
+   "themes": [
+    "Boundaries and Barriers",
+    "Hidden and Revealed",
+    "Memory and Nostalgia"
+   ],
+   "pathways": [
+    "3D",
+    "Fine Art"
+   ],
+   "borrow": "Fill or block part of an object to change its meaning."
+  },
+  {
+   "name": "Jenny Saville",
+   "meta": "b. 1970 · British · Painter",
+   "known_for": "Huge, fleshy, close-up paintings of bodies.",
+   "key_work": "Propped, 1992.",
+   "themes": [
+    "The Body",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint skin with thick, expressive brushwork."
+  },
+  {
+   "name": "Elsa Schiaparelli",
+   "meta": "1890–1973 · Italian · Fashion designer",
+   "known_for": "Playful surrealist fashion, made with artists like Dalí.",
+   "key_work": "The Lobster Dress, 1937.",
+   "themes": [
+    "Identity",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "Fashion/Textiles"
+   ],
+   "borrow": "Put an unexpected object or image onto a garment."
+  },
+  {
+   "name": "Egon Schiele",
+   "meta": "1890–1918 · Austrian · Painter",
+   "known_for": "Tense, twisting, expressive line drawings of figures.",
+   "key_work": "His figure drawings from 1910 to 1918.",
+   "themes": [
+    "The Body",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Draw a figure with sharp, angular, confident lines."
+  },
+  {
+   "name": "Kurt Schwitters",
+   "meta": "1887–1948 · German · Collage artist",
+   "known_for": "Made 'Merz' collages from tickets, wrappers and rubbish.",
+   "key_work": "His Merz collages from the 1920s.",
+   "themes": [
+    "Fragments",
+    "Decay and Transformation",
+    "The City"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Collage with tickets and packaging you've collected."
+  },
+  {
+   "name": "Richard Serra",
+   "meta": "1938–2024 · American · Sculptor",
+   "known_for": "Huge curved steel walls that you walk around and between.",
+   "key_work": "Tilted Arc, 1981.",
+   "themes": [
+    "Boundaries and Barriers",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Make a card model of walls that change how you move."
+  },
+  {
+   "name": "Cindy Sherman",
+   "meta": "b. 1954 · American · Photographer",
+   "known_for": "Photographs herself dressed as invented characters.",
+   "key_work": "Untitled Film Stills, 1977–80.",
+   "themes": [
+    "Identity",
+    "Hidden and Revealed"
+   ],
+   "pathways": [
+    "Photography"
+   ],
+   "borrow": "Photograph yourself as a character you've invented."
+  },
+  {
+   "name": "Yinka Shonibare",
+   "meta": "b. 1962 · British-Nigerian · Sculpture and textiles",
+   "known_for": "Uses colourful Dutch wax print fabric to question history and culture.",
+   "key_work": "Nelson's Ship in a Bottle, 2010.",
+   "themes": [
+    "Identity",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "3D",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Cover a familiar shape in a fabric that changes its meaning."
+  },
+  {
+   "name": "Hiroshi Sugimoto",
+   "meta": "b. 1948 · Japanese · Photographer",
+   "known_for": "Calm, minimal black-and-white photos of the sea and horizon.",
+   "key_work": "Seascapes series, from 1980.",
+   "themes": [
+    "Water and the Coast",
+    "Light and Shadow",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "Photography"
+   ],
+   "borrow": "Photograph the horizon split exactly in half."
+  },
+  {
+   "name": "Do Ho Suh",
+   "meta": "b. 1962 · South Korean · Sculptor",
+   "known_for": "Life-size see-through fabric copies of homes he's lived in.",
+   "key_work": "His fabric 'home' installations.",
+   "themes": [
+    "Place and Belonging",
+    "Memory and Nostalgia",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "3D",
+    "Fashion/Textiles"
+   ],
+   "borrow": "Recreate part of your home in thin fabric or tracing paper."
+  },
+  {
+   "name": "Sam Taylor-Johnson",
+   "meta": "b. 1967 · British · Artist and filmmaker",
+   "known_for": "Photography and film about time, change and the body.",
+   "key_work": "Still Life, 2001: a time-lapse film of fruit rotting.",
+   "themes": [
+    "Decay and Transformation",
+    "Objects and Collections"
+   ],
+   "pathways": [
+    "Photography"
+   ],
+   "borrow": "Photograph the same object every day as it changes."
+  },
+  {
+   "name": "J.M.W. Turner",
+   "meta": "1775–1851 · British · Painter",
+   "known_for": "Stormy, misty seas and skies full of light.",
+   "key_work": "Snow Storm: Steam-Boat off a Harbour's Mouth, 1842.",
+   "themes": [
+    "Water and the Coast",
+    "Light and Shadow"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint weather with loose, swirling washes."
+  },
+  {
+   "name": "James Turrell",
+   "meta": "b. 1943 · American · Light artist",
+   "known_for": "Rooms and spaces where light itself is the artwork.",
+   "key_work": "Roden Crater, a long-running project in Arizona.",
+   "themes": [
+    "Light and Shadow",
+    "Place and Belonging"
+   ],
+   "pathways": [
+    "3D",
+    "Fine Art"
+   ],
+   "borrow": "Make a box that frames light or sky."
+  },
+  {
+   "name": "Vincent van Gogh",
+   "meta": "1853–1890 · Dutch · Painter",
+   "known_for": "Thick, swirling brushstrokes and expressive colour.",
+   "key_work": "The Starry Night, 1889.",
+   "themes": [
+    "Natural Forms",
+    "Place and Belonging",
+    "Light and Shadow"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Use directional brush marks to show movement and feeling."
+  },
+  {
+   "name": "Iris van Herpen",
+   "meta": "b. 1984 · Dutch · Fashion designer",
+   "known_for": "Couture inspired by nature and science, often using 3D printing.",
+   "key_work": "Her catwalk collections from 2007 onwards.",
+   "themes": [
+    "Natural Forms",
+    "Water and the Coast",
+    "The Body"
+   ],
+   "pathways": [
+    "Fashion/Textiles",
+    "3D"
+   ],
+   "borrow": "Build a garment surface from repeated natural shapes."
+  },
+  {
+   "name": "Kara Walker",
+   "meta": "b. 1969 · American · Artist",
+   "known_for": "Cut-paper silhouettes that tell difficult stories about history.",
+   "key_work": "Fons Americanus, 2019, at Tate Modern.",
+   "themes": [
+    "Light and Shadow",
+    "Identity",
+    "Hidden and Revealed"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Tell a story using only black silhouettes."
+  },
+  {
+   "name": "Andy Warhol",
+   "meta": "1928–1987 · American · Pop artist",
+   "known_for": "Repeated screen-printed images of celebrities and products.",
+   "key_work": "Marilyn Diptych, 1962.",
+   "themes": [
+    "Pattern and Repetition",
+    "Objects and Collections",
+    "Identity"
+   ],
+   "pathways": [
+    "Fine Art",
+    "Graphic Communication"
+   ],
+   "borrow": "Repeat one image several times in different colours."
+  },
+  {
+   "name": "Vivienne Westwood",
+   "meta": "1941–2022 · British · Fashion designer",
+   "known_for": "Brought punk into fashion, mixing tartan, history and rebellion.",
+   "key_work": "Her punk designs of the 1970s.",
+   "themes": [
+    "Identity",
+    "Fragments"
+   ],
+   "pathways": [
+    "Fashion/Textiles"
+   ],
+   "borrow": "Rip, pin and rework a traditional fabric."
+  },
+  {
+   "name": "Rachel Whiteread",
+   "meta": "b. 1963 · British · Sculptor",
+   "known_for": "Casts the empty space in and around objects and buildings.",
+   "key_work": "House, 1993: a cast of the inside of a London house.",
+   "themes": [
+    "Place and Belonging",
+    "Memory and Nostalgia",
+    "Structures and Architecture"
+   ],
+   "pathways": [
+    "3D"
+   ],
+   "borrow": "Cast the inside of a box or container in plaster."
+  },
+  {
+   "name": "Kehinde Wiley",
+   "meta": "b. 1977 · American · Painter",
+   "known_for": "Puts modern sitters into grand poses from old portraits, with bold patterned backgrounds.",
+   "key_work": "His portrait of Barack Obama, 2018.",
+   "themes": [
+    "Identity",
+    "Pattern and Repetition"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Pose someone like an old portrait and add a patterned background."
+  },
+  {
+   "name": "Kyffin Williams",
+   "meta": "1918–2006 · Welsh · Painter",
+   "known_for": "Thick palette-knife paintings of Welsh landscapes and people.",
+   "key_work": "His paintings of Snowdonia and Anglesey.",
+   "themes": [
+    "Place and Belonging",
+    "Natural Forms"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Paint a landscape with a palette knife instead of a brush."
+  },
+  {
+   "name": "Stephen Wiltshire",
+   "meta": "b. 1974 · British · Artist",
+   "known_for": "Detailed city panoramas drawn from memory, often after one short look.",
+   "key_work": "His panoramic drawings of cities like London and New York.",
+   "themes": [
+    "The City",
+    "Structures and Architecture",
+    "Memory and Nostalgia"
+   ],
+   "pathways": [
+    "Fine Art"
+   ],
+   "borrow": "Look at a view for one minute, then draw it from memory."
+  }
+ ]
+}

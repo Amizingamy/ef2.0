@@ -1,0 +1,11 @@
+# Secrets: never upload these
+settings.env
+.env
+
+# The bot's saved data (plans, streaks, logs)
+data.json
+data.tmp
+
+# Python clutter
+__pycache__/
+*.pyc
