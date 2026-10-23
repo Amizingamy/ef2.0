@@ -92,6 +92,7 @@ So the plan is: **files on GitHub → a hosting service that runs them**. Whenev
 3. Open the service, go to the **Variables** tab, and add:
    - `DISCORD_TOKEN` = your bot token
    - Optional: `DAILY_HOUR` = `9` and `TIMEZONE` = `Europe/London`
+   - Optional: `AUTO_PING_USERS` (Discord user IDs to auto-ping daily), `AUTO_PING_TIME` (default `18:00`)
    - Optional: `DAILY_CHANNEL_ID`, `ANTHROPIC_API_KEY` (see the AI section below)
 4. **So plans and streaks are never lost:** right-click the service, choose **Attach Volume**, set the mount path to `/data`, then add a variable `DATA_DIR` = `/data`.
 5. If Railway asks for a start command, enter `python bot.py`.
@@ -125,6 +126,27 @@ Type `/help` in your server. Slash commands can take a few minutes to appear the
 Good first test: `/brief`, then `/theme`, then `/describe`.
 **Set up Ef's ping:** in your shared channel, Ef types `/ping` and picks `time: 6pm`. It's tied to whoever runs it, so **he** needs to run it (or you can run it to test on yourself first).
 To change the points, levels or funny lines, edit the "Sketchbook Quest" section at the bottom of `content.py`.
+
+---
+
+## Server channels (Ef's Corner)
+
+The bot finds these channels **by name** and uses them automatically:
+
+| Channel | What the bot posts there |
+|---|---|
+| `#reminders` | The daily @-ping with Yes / Not today buttons, **plans posted publicly** so mates can hold him to them, ✅ ticks when tasks are done, morning "today's tasks" reminders, and a 🗓️ **Sunday weekly recap** |
+| `#art-words` | 📖 Art word of the day, with a challenge to use it |
+| `#artists-info` | 🌟 Artist spotlight from the A to Z |
+| `#resources` | All the links and a "how to use the bot" guide, posted and pinned once by `/setup` |
+| `#notes-thoughts` | A copy of every `/log` entry, his sketchbook diary |
+
+After the bot is online, **run `/setup` once** (admins only). It checks it can see each channel and posts the resources.
+If a channel shows ❌, make sure the bot's role can **view and send messages** in that channel. Private categories often hide channels from bots.
+Renamed a channel? Change the names in `CHANNEL_NAMES` in `content.py`.
+
+**Ef's automatic ping:** add the Railway variable `AUTO_PING_USERS` = his Discord user ID. The bot then sets up his daily ping in `#reminders` on its own (time from `AUTO_PING_TIME`, default `18:00`).
+Admins can also set someone's ping with `/ping user:@name time:6pm`.
 
 ---
 

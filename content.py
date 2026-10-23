@@ -202,3 +202,37 @@ CATCHUP_LINES = [
     "🔁 Comeback! Lost day reclaimed. The sketchbook forgives you. 😌",
     "🔁 Time recouped. Streak saved. Main character energy. ✨",
 ]
+
+# ---------- Server channels (matched by name, edit if you rename channels)
+CHANNEL_NAMES = {
+    "reminders": "reminders",        # daily @-pings, public plans, ticks, morning tasks, Sunday recap
+    "words": "art-words",            # art word of the day
+    "artists": "artists-info",       # artist spotlight
+    "resources": "resources",        # links + how to use the bot (posted once with /setup)
+    "notes": "notes-thoughts",       # copies of /log entries
+}
+
+RESOURCES_POST = """## 📚 Resources
+**Your Art Toolkit PDFs** (each has its own colour):
+🟡 1. Art Words · 🩷 2. How to Annotate · 🔵 3. Writing About Artists · 🟢 4. Theme Idea Bank
+🟣 5. Links & Resources · 🟠 6. Artists A to Z · 🩵 7. References
+*Tip: on iPad, tap the 🔍 in the PDF to search any word.*
+
+**Best sites**
+• Art words: <https://www.tate.org.uk/art/art-terms>
+• Sketchbook and annotation guides: <https://www.studentartguide.com>
+• Artists explained simply: <https://www.theartstory.org>
+• Zoom into artworks: <https://artsandculture.google.com>
+• UK art collections: <https://artuk.org>
+• Design, fashion and textiles: <https://collections.vam.ac.uk>
+• Other Foundation students' work: <https://showcase.arts.ac.uk>
+• Graphics inspo: <https://www.itsnicethat.com> · 3D: <https://www.dezeen.com> · Fashion: <https://www.vogue.com/fashion-shows>"""
+
+BOT_GUIDE_POST = """## 🤖 How to use Sketchbook Buddy
+**Stuck for ideas?** `/theme` · `/spark` · `/challenge`
+**Writing about your work?** `/describe` → `/annotate` · artists: `/study`
+**Questions?** `/ask` · `/word` · `/artist` · `/artists`
+**Organising?** `/brief` · `/plan` · `/todo` · `/done` · `/log` · `/progress`
+**The game 🎮** `/ping` · `/sketched` · `/score` · `/leaderboard`
+**Bad day?** `/checkin` · `/stuck` · `/hype`
+Type `/help` any time. 🤍"""

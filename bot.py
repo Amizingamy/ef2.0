@@ -53,6 +53,8 @@ def today_local():
     return dt.datetime.now(LOCAL_TZ).date()
 
 
+AUTO_PING_USERS = [x for x in re.split(r"[,\s]+", os.getenv("AUTO_PING_USERS", "")) if x.isdigit()]
+AUTO_PING_TIME = os.getenv("AUTO_PING_TIME", "18:00")
 AI_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 AI_MODEL = os.getenv("AI_MODEL", "claude-haiku-5-5")
 AI_DAILY_LIMIT = int(os.getenv("AI_DAILY_LIMIT") or 60)
@@ -402,7 +404,12 @@ async def handle_session(msg, s):
                                        "made": dt.date.today().isoformat()}
             save_data()
             end_session(ch, uid)
-            return await send(msg.channel, plan_text(uid) + "\n\nOnly look at **today's** tasks. The rest can wait. 💪")
+            await send(msg.channel, plan_text(uid) + "\n\nOnly look at **today's** tasks. The rest can wait. 💪")
+            guild = getattr(msg, "guild", None)
+            body = plan_text(uid).replace("## 📋 Your plan", f"## 📋 <@{uid}>'s plan").replace(" Tick one off with `/done number`.", "")
+            await post_also("reminders", body + "\n\n👀 **Mates, hold them to it!** I'll tick things off here as they get done.",
+                            guild, skip_channel_id=None if not guild else msg.channel.id)
+            return
 
 
 # ------------------------------------------------------------------ free-text replies (no AI)
@@ -883,6 +890,29 @@ def today_tasks(uid):
     return [(i, t) for i, t in enumerate(p["tasks"], 1) if not t["done"] and t["day"] <= day]
 
 
+# ---- server channels by name
+def find_channel(key, guild=None):
+    name = C.CHANNEL_NAMES.get(key, key).lower()
+    guilds = [guild] if guild else bot.guilds
+    for g in guilds:
+        if g is None:
+            continue
+        ch = discord.utils.get(g.text_channels, name=name)
+        if ch and ch.permissions_for(g.me).send_messages:
+            return ch
+    return None
+
+
+async def post_also(key, text, guild=None, skip_channel_id=None, **kw):
+    """Post a copy into a named server channel (e.g. #reminders) unless we're already in it."""
+    ch = find_channel(key, guild)
+    if ch and ch.id != skip_channel_id:
+        try:
+            await ch.send(text, allowed_mentions=discord.AllowedMentions(users=True), **kw)
+        except Exception as e:
+            print("post_also failed:", e)
+
+
 # ------------------------------------------------------------------ discord client
 intents = discord.Intents.default()
 intents.message_content = True
@@ -904,8 +934,23 @@ bot = Bot()
 tree = bot.tree
 
 
+def auto_pings():
+    """Create daily pings for user IDs listed in AUTO_PING_USERS (only if they don't have one yet)."""
+    rem = find_channel("reminders")
+    if not rem:
+        return
+    for uid in AUTO_PING_USERS:
+        if uid not in DATA["pings"]:
+            DATA["pings"][uid] = {"channel": rem.id, "time": AUTO_PING_TIME, "message": "",
+                                  "since": today_local().isoformat(), "last": None}
+            player(uid)
+            print(f"Auto ping set for {uid} at {AUTO_PING_TIME} in #{rem.name}")
+    save_data()
+
+
 @bot.event
 async def on_ready():
+    auto_pings()
     print(f"{BOT_NAME} is online as {bot.user} | AI mode: {'ON (' + AI_MODEL + ')' if AI else 'off'}")
 
 
@@ -1172,6 +1217,10 @@ async def done_cmd(inter: discord.Interaction, number: int):
     else:
         msg += f"\n{left} to go."
     await inter.response.send_message(msg)
+    total = len(p["tasks"])
+    shout = (f"🎉 <@{inter.user.id}> finished **their whole plan**! ({total}/{total}) Go hype them up! 🔥" if not left else
+             f"✅ <@{inter.user.id}> ticked off **{p['tasks'][number - 1]['text']}** ({total - left}/{total})")
+    await post_also("reminders", shout, getattr(inter, "guild", None), skip_channel_id=inter.channel_id)
 
 
 @tree.command(name="ask", description="Ask any question about your course, art, or a topic")
@@ -1249,6 +1298,8 @@ async def log_cmd(inter: discord.Interaction, what: str):
     r = mark_yes(inter.user.id)
     pts = f" **+{r[0]} ⭐**" if r else ""
     await inter.response.send_message(f"{random.choice(C.LOG_REPLIES)} *{what[:300]}*{pts}\n{score_line(inter.user.id)}")
+    await post_also("notes", f"📒 <@{inter.user.id}> · {today_local().strftime('%a %d %b')}: {what[:300]}", getattr(inter, "guild", None),
+                    skip_channel_id=inter.channel_id)
 
 
 @tree.command(name="progress", description="See everything you've done so far")
@@ -1288,9 +1339,16 @@ async def reminders_cmd(inter: discord.Interaction, setting: app_commands.Choice
 
 
 @tree.command(name="ping", description="Get a daily sketchbook ping in this channel, tagged with your name")
-@app_commands.describe(time="Time for the ping, e.g. 18:00 or 6pm", message="Your own ping message (optional)", off="Turn the ping off")
-async def ping_cmd(inter: discord.Interaction, time: str = "18:00", message: str = "", off: bool = False):
-    uid = str(inter.user.id)
+@app_commands.describe(time="Time for the ping, e.g. 18:00 or 6pm", message="Your own ping message (optional)", off="Turn the ping off",
+                       user="Set it up for someone else (server admins only)")
+async def ping_cmd(inter: discord.Interaction, time: str = "18:00", message: str = "", off: bool = False,
+                   user: discord.Member = None):
+    target = user or inter.user
+    if user and user.id != inter.user.id:
+        perms = getattr(inter.user, "guild_permissions", None)
+        if not perms or not (perms.manage_guild or perms.administrator):
+            return await inter.response.send_message("Only server admins can set a ping for someone else. 🙂 Ask them to run `/ping` themselves!", ephemeral=True)
+    uid = str(target.id)
     if off:
         DATA["pings"].pop(uid, None); save_data()
         return await inter.response.send_message("Daily ping is off. The sketchbook will miss you. 🥲 (`/ping` to turn it back on)")
@@ -1303,13 +1361,15 @@ async def ping_cmd(inter: discord.Interaction, time: str = "18:00", message: str
     if not (0 <= h < 24 and 0 <= mi < 60):
         return await inter.response.send_message("That time doesn't exist. 😅 Try `18:00` or `6pm`.")
     old_p = DATA["pings"].get(uid, {})
-    DATA["pings"][uid] = {"channel": inter.channel_id, "time": f"{h:02d}:{mi:02d}", "message": message[:300] or old_p.get("message", ""),
+    rem = find_channel("reminders", getattr(inter, "guild", None))
+    DATA["pings"][uid] = {"channel": rem.id if rem else inter.channel_id, "time": f"{h:02d}:{mi:02d}", "message": message[:300] or old_p.get("message", ""),
                           "since": old_p.get("since") or today_local().isoformat(), "last": old_p.get("last")}
     player(uid)
     save_data()
     msg = DATA["pings"][uid]["message"] or C.DEFAULT_PING
-    await inter.response.send_message(
-        f"⏰ Done! Every day at **{h:02d}:{mi:02d}** ({TIMEZONE.split('/')[-1].replace('_', ' ')} time) I'll ping you here with:\n> {msg}\n\n"
+    await inter.response.send_message(allowed_mentions=discord.AllowedMentions(users=True), content=
+        f"⏰ Done! Every day at **{h:02d}:{mi:02d}** ({TIMEZONE.split('/')[-1].replace('_', ' ')} time) I'll ping <@{uid}> in "
+        f"<#{DATA['pings'][uid]['channel']}> with:\n> {msg}\n\n"
         f"**The game:** ✅ Yes = **+{C.POINTS_YES}** · ❌ Not today = **{C.POINTS_NO}** · 👻 No answer = **{C.POINTS_MISS}**\n"
         f"🔁 Missed a day? Do a double session within {C.CATCHUP_DAYS} days and catch up to win it back (**+{C.POINTS_CATCHUP}** bonus).\n"
         f"🔥 Every 7 days in a row = **+{C.STREAK_BONUS}** bonus. Level up from 📄 Blank Page to 👑 Master of the Page.\n"
@@ -1369,6 +1429,31 @@ async def leaderboard_cmd(inter: discord.Interaction):
     await inter.response.send_message("\n".join(out), allowed_mentions=discord.AllowedMentions.none())
 
 
+@tree.command(name="setup", description="(Admins) Connect me to this server's channels and post the resources")
+async def setup_cmd(inter: discord.Interaction):
+    perms = getattr(inter.user, "guild_permissions", None)
+    if not inter.guild or not perms or not (perms.manage_guild or perms.administrator):
+        return await inter.response.send_message("Only server admins can run `/setup`.", ephemeral=True)
+    jobs = {"reminders": "daily @-pings, plans, ticks, morning tasks, Sunday recap", "words": "art word of the day",
+            "artists": "artist spotlight", "resources": "links and bot guide", "notes": "copies of `/log` entries"}
+    lines = ["## ⚙️ Setup"]
+    for key, job in jobs.items():
+        ch = find_channel(key, inter.guild)
+        lines.append(f"{'✅' if ch else '❌'} **#{C.CHANNEL_NAMES[key]}**: {job}" + ("" if ch else
+                     " · *not found, or I can't post there. Check the name and give me access to the channel.*"))
+    res = find_channel("resources", inter.guild)
+    if res:
+        for body in (C.RESOURCES_POST, C.BOT_GUIDE_POST):
+            m = await res.send(body, suppress_embeds=True)
+            try:
+                await m.pin()
+            except Exception:
+                pass
+        lines.append(f"\n📚 Posted the resources and the bot guide in {res.mention}.")
+    lines.append(f"\nDaily posts go out at **{DAILY_HOUR:02d}:00** {TIMEZONE.split('/')[-1].replace('_', ' ')} time.")
+    await inter.response.send_message("\n".join(lines), ephemeral=True)
+
+
 @tree.command(name="reset", description="Stop any guided chat and start fresh")
 async def reset_cmd(inter: discord.Interaction):
     end_session(inter.channel_id, inter.user.id)
@@ -1390,19 +1475,47 @@ async def daily_post():
     if ch:
         n, d = random.choice(C.CHALLENGES)
         await ch.send(f"☀️ **Daily sketchbook warm-up: {n}**\n{d}\n\n{random.choice(C.HYPE)}")
+    day_no = today_local().toordinal()
+    wch = find_channel("words")
+    if wch:
+        w = sorted(WORDS)[day_no % len(WORDS)]
+        d, ex = WORDS[w]
+        await wch.send(f"## 📖 Art word of the day: **{w.title()}**\n{d}" + (f"\n*e.g. {ex}*" if ex else "") +
+                       "\n\n🎯 **Challenge:** use it in one of your annotations today.")
+    ach = find_channel("artists")
+    if ach:
+        a = K["artists"][(day_no * 37) % len(K["artists"])]
+        await ach.send("## 🌟 Artist spotlight", embed=artist_embed(a))
+    rem = find_channel("reminders")
     for uid in list(DATA["plans"]):
         if int(uid) in DATA["reminders_off"]:
             continue
         todo = today_tasks(uid)
         if not todo:
             continue
+        items = "\n".join(f"⬜ `{i}` {t['text']}" for i, t in todo[:8])
+        text = (f"☀️ **Morning <@{uid}>!** Here's what's on today:\n{items}\n\nJust start with the first one. "
+                f"`/done number` when it's finished. {random.choice(C.HYPE)}")
         try:
-            user = await bot.fetch_user(int(uid))
-            items = "\n".join(f"⬜ `{i}` {t['text']}" for i, t in todo[:8])
-            await user.send(f"☀️ **Morning!** Here's what's on today:\n{items}\n\nJust start with the first one. "
-                            f"`/done number` when it's finished. {random.choice(C.HYPE)}\n*(`/reminders off` to stop these)*")
+            if rem:
+                await rem.send(text, allowed_mentions=discord.AllowedMentions(users=True))
+            else:
+                user = await bot.fetch_user(int(uid))
+                await user.send(text + "\n*(`/reminders off` to stop these)*")
         except Exception as e:
-            print("reminder DM failed:", e)
+            print("morning reminder failed:", e)
+    if rem and today_local().weekday() == 6:          # Sunday recap
+        for uid, g in DATA["game"].items():
+            if not g.get("days") and not DATA["logs"].get(uid):
+                continue
+            t0 = today_local()
+            strip = "".join({"yes": "🟩", "caught": "🟦", "no": "🟥", "miss": "⬛"}.get(
+                g["days"].get((t0 - dt.timedelta(days=i)).isoformat()) or
+                ("yes" if (t0 - dt.timedelta(days=i)).isoformat() in done_dates(int(uid)) else ""), "⬜") for i in range(6, -1, -1))
+            done = sum(1 for i in range(7) if (t0 - dt.timedelta(days=i)).isoformat() in done_dates(int(uid)))
+            await rem.send(f"## 🗓️ Weekly recap for <@{uid}>\n{strip}  **{done}/7 days**\n{score_line(int(uid))}\n"
+                           + ("Incredible week. Mates, hype them up! 🔥" if done >= 5 else "New week, fresh pages. You've got this. 🌱"),
+                           allowed_mentions=discord.AllowedMentions(users=True))
 
 
 @daily_post.before_loop
